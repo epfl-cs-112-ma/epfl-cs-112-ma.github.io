@@ -1,5 +1,5 @@
 ---
-title: Home - CS-112(j)
+title: Home
 layout: default
 ---
 
