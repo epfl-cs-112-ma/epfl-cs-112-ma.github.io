@@ -23,6 +23,9 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
+        <p class="view">Cours : {{ site.courseinfo.lecture_time }}, {{ site.courseinfo.lecture_room }}</p>
+        <p class="view">Exercices : {{ site.courseinfo.exercises_time }}, {{ site.courseinfo.exercises_rooms }}</p>
+
         {% if site.github.is_project_page %}
         <!--<p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>-->
         {% endif %}
