@@ -55,5 +55,16 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if page.use_mermaid %}
+    <script>
+      for (const elem of document.getElementsByClassName("language-mermaid")) {
+        elem.classList.add('mermaid');
+      }
+    </script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    {% endif %}
   </body>
 </html>
