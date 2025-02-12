@@ -158,7 +158,7 @@ $ git commit -m "Initial commit." # créer le commit initial
 Nous ne mentionnerons plus git à partir d'ici.
 Charge à vous de l'utiliser à bon escient (même si ce n'est qu'en mode local, sans pousser sur GitHub), ou pas.
 
-### Dans VS Code
+### Explorons le projet
 
 Ouvrez maintenant VS Code (si ce n'est pas déjà fait), et utiliser le menu "File | Open Folder" (Ctrl+K Ctrl+O).
 Sélectionnez le dossier `prise-en-main` et validez.
@@ -198,3 +198,125 @@ Le `if` est donc bien en *dehors* de la `def main():`.
 
 Si vous n'aviez pas encore pris le pli d'indenter correctement votre code, ça ne va plus tarder.
 Python ne vous laissera tout simplement pas utiliser une mauvaise indentation !
+
+#### `pyproject.toml`
+
+Ce fichier contient la configuration globale de votre projet.
+Pour l'instant, il ne contient que certaines méta-données qui n'ont que peu d'importance.
+On note cependant une ligne qui déclare un pré-requis sur la version de Python nécessaire.
+
+```toml
+[project]
+name = "prise-en-main"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+```
+
+Plus tard, ce fichier déclarera des dépendances à des bibliothèques et outils externes.
+Il contiendra aussi une configuration un peu plus avancée.
+
+#### `README.md`
+
+Un fichier [Markdown](https://docs.github.com/fr/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) contenant des informations à l'intention des utilisateurs et utilisatrices de votre projet.
+Il n'entre pas en compte pour la compilation et l'exécution de votre programme.
+
+Si vous poussez votre projet sur GitHub, le fichier `README.md` sera présenté comme "page d'accueil".
+
+#### `.python-version`
+
+Ce petit fichier enregistre de façon permanente la version de Python qui doit être utilisée par `uv`.
+Vous ne devrez jamais le modifier.
+
+#### `.gitignore`
+
+Celui-ci est pour git.
+Pour rappel, il indique à git certains fichiers qui ne doivent jamais être stockés par git.
+Ces fichiers sont générés automatiquement par `uv`, par VS Code, ou par d'autres outils.
+
+Vous n'aurez en principe pas à modifier ce fichier.
+
+#### `uv.lock`
+
+Ce fichier *ne doit jamais* être modifié à la main.
+Il est entièrement manipulé par `uv` pour stocker les versions *exactes* des bibliothèques et outils utilisés par votre programme.
+
+Il doit faire partie des fichiers stockés dans git, cependant.
+En effet, cela permet de s'assurer que votre projet fonctionnera avec exactement les mêmes dépendances sur n'importe quel ordinateur.
+
+### Lancer le programme depuis VS Code.
+
+Il est parfois plus pratique de lancer votre projet directement depuis VS Code.
+Lorsque le fichier `hello.py` est ouvert, cliquez sur l'icône ▷ située tout en haut à droite de l'écran.
+
+## Activer le type checker mypy (obligatoire !)
+
+Dans ce cours, nous utiliserons exclusivement du Python statiquement typé avec [mypy](https://mypy-lang.org/), *en mode strict*.
+Configurons maintenant notre projet pour s'assurer que c'est le cas.
+
+Ouvrez le fichier `pyproject.toml` dans VS Code.
+Ajoutez les lignes suivantes à la fin :
+
+```toml
+[tool.mypy]
+strict = true
+```
+
+et sauvegardez.
+
+Puis, demandez à `uv` d'installer mypy pour votre projet avec la commande suivante :
+
+```bash
+$ uv add --dev mypy
+Resolved 4 packages in 149ms
+Installed 3 packages in 555ms
+ + mypy==1.15.0
+ + mypy-extensions==1.0.0
+ + typing-extensions==4.12.2
+```
+
+Vous pouvez désormais lancer mypy sur votre projet avec :
+
+```bash
+$ uv run mypy . # le '.' est important
+hello.py:1: error: Function is missing a return type annotation  [no-untyped-def]
+hello.py:1: note: Use "-> None" if function does not return a value
+hello.py:6: error: Call to untyped function "main" in typed context  [no-untyped-call]
+Found 2 errors in 1 file (checked 1 source file)
+```
+
+Huh ! Malédiction !
+Nous n'avons rien modifié dans le programme, mais il est déjà incorrect !
+
+C'est normal.
+Le programme Python généré par défaut par `uv init` ne contient pas de types statiques.
+Il nous faut remédier à cela.
+
+Dans VS Code, utiliser la combinaison de touche `Ctrl+Shift+P`, puis utilisez la barre de recherche pour trouver "Developer: Reload Window".
+Après avoir fait des modifications dans votre `pyproject.toml`, il est parfois nécessaire d'utiliser cette commande pour que VS Code en tienne compte.
+
+Ouvrez à nouveau `hello.py`.
+Au bout d'un petit moment, si ce n'est pas immédiat, certaines lignes apparaîtront en rouge.
+Ce sont les erreurs de mypy.
+
+Corrigeons la déclaration de `def main` pour inclure le `-> None` exigé par mypy:
+
+```diff
+-def main():
++def main() -> None:
+     print("Hello from prise-en-main!")
+```
+
+Après avoir sauvegardé, les lignes rouges disparaissent, indiquant que le problème est résolu.
+On peut aussi s'en assurer en lançant mypy explicitement :
+
+```bash
+$ uv run mypy .
+Success: no issues found in 1 source file
+```
+
+On voit ici un avantage certain de VS Code (ou de n'importe quel autre IDE) comparé à Geany.
+Dès que l'on enregistre, VS Code adapte la présentation pour refléter les erreurs potentielles.
+C'est un gain de temps incroyable lorsqu'on développe !
