@@ -15,8 +15,8 @@ Nous utiliserons les outils suivants (il n'est pas nécessaire de suivre ces lie
 
 * [uv](https://docs.astral.sh/uv/) pour gérer nos projets et leurs dépendances (y compris certains des *autres* outils).
 * [VS Code](https://code.visualstudio.com/) *(optionnel)* pour l'édition de nos programmes (remplaçant donc Geany par rapport au premier semestre).
-* [mypy](https://mypy-lang.org/) *en mode strict* pour valider les types statiques de nos programmes.
-* [pytest](https://docs.pytest.org/en/stable/) *(dans une série ultérieure)* pour *tester* nos programmes.
+* [Mypy](https://mypy-lang.org/) *en mode strict* pour valider les types statiques de nos programmes.
+* [pytest](https://docs.pytest.org/en/stable/) pour *tester* nos programmes.
 
 ## Installation de `uv`
 
@@ -46,7 +46,7 @@ Dans les deux cas:
 1. *Fermez le terminal* que vous avez utilisé pour installer uv.
 2. Ouvrez un nouveau terminal, et exécutez :
 
-```bash
+```
 $ uv version
 uv 0.5.29 (ca73c4754 2025-02-05)
 ```
@@ -109,7 +109,7 @@ Nous ferons référence à ce dossier comme `projets/`.
 
 Dans ce dossier, créez un projet Python vierge dans le sous-dossier `prise-en-main` avec les commandes suivantes :
 
-```bash
+```
 projets$ mkdir prise-en-main
 projets$ cd prise-en-main
 prise-en-main$ uv init -p 3.13
@@ -124,7 +124,7 @@ C'est très utile, car cela garantit que votre programme fonctionnera de la mêm
 
 Vous pouvez d'ores et déjà lancer ce programme avec la commande suivante :
 
-```bash
+```
 prise-en-main$ uv run hello.py
 Using CPython 3.13.2
 Creating virtual environment at: .venv
@@ -134,7 +134,7 @@ Hello from prise-en-main!
 Les lignes "Using" et "Creating" ne s'afficheront que la première fois.
 Si vous le lancez à nouveau, vous n'aurez plus que :
 
-```bash
+```
 prise-en-main$ uv run hello.py
 Hello from prise-en-main!
 ```
@@ -198,6 +198,9 @@ Le `if` est donc bien en *dehors* de la `def main():`.
 
 Si vous n'aviez pas encore pris le pli d'indenter correctement votre code, ça ne va plus tarder.
 Python ne vous laissera tout simplement pas utiliser une mauvaise indentation !
+
+Notez que le monde Python s'accorde sur une indentation de *4 espaces*.
+Respectez la convention, ou vos collègues vous maudiront.
 
 #### `pyproject.toml`
 
@@ -268,7 +271,7 @@ et sauvegardez.
 
 Puis, demandez à `uv` d'installer mypy pour votre projet avec la commande suivante :
 
-```bash
+```
 $ uv add --dev mypy
 Resolved 4 packages in 149ms
 Installed 3 packages in 555ms
@@ -279,7 +282,7 @@ Installed 3 packages in 555ms
 
 Vous pouvez désormais lancer mypy sur votre projet avec :
 
-```bash
+```
 $ uv run mypy . # le '.' est important
 hello.py:1: error: Function is missing a return type annotation  [no-untyped-def]
 hello.py:1: note: Use "-> None" if function does not return a value
@@ -309,10 +312,12 @@ Corrigeons la déclaration de `def main` pour inclure le `-> None` exigé par my
      print("Hello from prise-en-main!")
 ```
 
+Dans ce contexte, `None` est équivalent au `void` de C++.
+
 Après avoir sauvegardé, les lignes rouges disparaissent, indiquant que le problème est résolu.
 On peut aussi s'en assurer en lançant mypy explicitement :
 
-```bash
+```
 $ uv run mypy .
 Success: no issues found in 1 source file
 ```
@@ -320,3 +325,218 @@ Success: no issues found in 1 source file
 On voit ici un avantage certain de VS Code (ou de n'importe quel autre IDE) comparé à Geany.
 Dès que l'on enregistre, VS Code adapte la présentation pour refléter les erreurs potentielles.
 C'est un gain de temps incroyable lorsqu'on développe !
+
+## Écrire des tests avec pytest
+
+Au premier semestre, nous avons appris à écrire des tests pour nos fonctions.
+Par example, on pouvait définir en C++ une fonction `square`, et une fonction pour la tester (exemple très rudimentaire ici) :
+
+```cpp
+#include <cassert>
+
+int square(int x) {
+  return x * x;
+}
+
+void testSquare() {
+  assert(square(4) == 16);
+}
+```
+
+Il y avait plusieurs difficultés avec cette solution :
+
+* On est obligé d'ajouter des appels à toutes nos fonctions `testX()` au début du `main()` de notre vrai programme.
+  Avec quelques dizaines de tests, ce n'est pas très important.
+  Mais lorsque l'application grandit et a besoin de centaines ou de milliers de tests, cela a un impact sur le temps que met notre programme à se lancer.
+  Nos utilisateurs et utilisatrices n'ont pas à subir de pertes de performances pour les besoins de nos tests.
+* Seul le premier test qui échoue est rapporté.
+  Nous n'avons pas de moyen facile d'avoir une vue d'ensemble de l'état de tous nos tests.
+
+Les *testing frameworks* (frameworks de tests) viennent à notre rescousse sur ces deux points !
+Dans ce cours, nous allons utiliser [pytest](https://docs.pytest.org/en/stable/), un des testing frameworks les plus utilisés avec Python.
+
+### Installer pytest
+
+Nous installons pytest de la même façon que mypy, avec la commande suivante :
+
+```
+$ uv add --dev pytest
+Resolved 9 packages in 283ms
+Installed 5 packages in 80ms
+ + colorama==0.4.6
+ + iniconfig==2.0.0
+ + packaging==24.2
+ + pluggy==1.5.0
+ + pytest==8.3.4
+```
+
+Nous pouvons immédiatement tenter d'exécuter "tous les tests" de notre programme :
+
+```
+$ uv run pytest
+=== test session starts ===
+platform win32 -- Python 3.13.2, pytest-8.3.4, pluggy-1.5.0
+rootdir: .../prise-en-main
+configfile: pyproject.toml
+collected 0 items
+
+=== no tests ran in 0.01s ===
+```
+
+Bon, sans surprise, ce n'était pas très utile.
+Mais cela confirme que pytest a bien été installé.
+
+### Écrire un test
+
+D'abord, définissons une fonction `square` dans notre fichier `hello.py` :
+
+```python
+def square(x: int) -> int:
+    return x * x
+```
+
+Nos tests, eux, seront écrits un fichier (*module*) séparé.
+
+Créez un sous-dossier `tests` (ce nom est une convention partagée par tous les développeurs Python ; respectez-le) dans le dossier `prise-en-main`.
+À l'intérieur de ce dossier, commencez par créer un fichier nommé `__init__.py` (ce nom est *imposé* par Python ; il y a *2* `_` de chaque côté).
+Ce fichier restera *vide*.
+Python exige son existence pour reconnaître que le dossier `tests` contient d'autres modules Python.
+
+Ensuite, créez le fichier `test_hello.py`.
+Ce nom est composé de `test_`, suivi du nom du module qui contient les fonctions que l'on veut tester.
+Puisque `square` est définie dans `hello.py`, les tests pour `square` seront dans `tests/test_hello.py`.
+Écrivez le contenu suivant :
+
+```python
+from hello import square
+
+def test_square() -> None:
+    assert square(4) == 16
+```
+
+La première ligne *importe* la fonction `square` depuis le module `hello`.
+C'est similaire à un `#include` de C++.
+Nous avions besoin de `#include <string>` en C++ pour avoir accès au type `string`.
+Ici nous avons besoin d'accéder aux fonctions définies dans `hello.py`.
+En C++, un `#include` importe *tout* ce qu'il contient.
+En Python, on sélectionne explicitement les choses qui nous intéressent.
+
+Le nom de la fonction de test *doit* commencer par `test_` pour que pytest la découvre comme étant un test.
+Le reste de son nom n'a pas d'importance, mais souvent ce sera le nom de la fonction que l'on veut tester.
+
+L'*assertion* `assert(square(4)) == 16` est notre véritable test.
+
+Nous pouvons maintenant lancer notre test :
+
+```
+$ uv run pytest
+=== test session starts ===
+platform win32 -- Python 3.13.2, pytest-8.3.4, pluggy-1.5.0
+rootdir: .../prise-en-main
+configfile: pyproject.toml
+collected 1 item
+
+tests\test_hello.py .          [100%]
+
+=== 1 passed in 0.02s ===
+```
+
+Succès !
+
+### Quand ça se passe mal
+
+Ajoutons un test qui va échouer, pour voir ce qui se passe :
+
+```diff
+ def test_square() -> None:
+     assert square(4) == 16
++    assert square(5) == 20
+```
+
+Et lançons à nouveaux nos tests :
+
+```
+$ uv run pytest
+=== test session starts ===
+platform win32 -- Python 3.13.2, pytest-8.3.4, pluggy-1.5.0
+rootdir: .../prise-en-main
+configfile: pyproject.toml
+collected 1 item
+
+tests\test_hello.py F      [100%]
+
+=== FAILURES ===
+_________ test_square _________
+
+    def test_square() -> None:
+        assert square(4) == 16
+>       assert square(5) == 20
+E       assert 25 == 20
+E        +  where 25 = square(5)
+
+tests\test_hello.py:5: AssertionError
+=== short test summary info ===
+FAILED tests/test_hello.py::test_square - assert 25 == 20
+=== 1 failed in 0.06s ===
+```
+
+Cette fois, pytest nous indique qu'il y a une erreur.
+Il nous montre la ligne qui a échoué, ainsi que les valeurs (`25`) et d'où elle viennent (`where 25 == square(5)`).
+
+### Lancer les tests depuis VS Code
+
+Avant de corriger le test, lançons les tests depuis VS Code.
+L'avantage est que nous obtiendrons un rapport *visuel* des résultats des tests.
+De plus, on pourra directement rejoindre le code des tests en double-cliquant dessus.
+
+1. Dans VS Code, dans la colonne d'icônes de gauche, cliquez sur ![Icône Testing de VS Code](/assets/img/icon-vs-code-testing.png).
+2. Dans le panneau qui apparaît, cliquez sur "Configure Python Tests".
+3. Dans la liste qui apparaît, sélectionnez "pytest"
+4. Puis sélectionnez "`tests`" pour le dossier qui contient les tests.
+
+Le panneau de gauche doit maintenant ressembler à ceci :
+
+![Panneau de tests de VS Code](/assets/img/vs-code-pane-tests.png)
+
+Cliquez sur le bouton ⏩ (Run tests) en haut à gauche.
+Vous pouvez voir que le test a échoué.
+
+En cliquant sur le bandeau du message d'erreur, les détails s'ouvrent :
+
+![Détails d'un test dans VS Code](/assets/img/vs-code-test-details.png)
+
+Corrigeons finalement notre test, puis relançons les tests :
+
+```diff
+ def test_square() -> None:
+     assert square(4) == 16
+-    assert square(5) == 20
++    assert square(5) == 25
+```
+
+![Tests réussis dans VS Code](/assets/img/vs-code-test-success.png)
+
+Essayez d'ajouter d'autres fonctions de test.
+Faites-en échouer certaines, mais pas d'autres.
+Que se passe-t-il ?
+
+## Conclusion
+
+Dans cette série, nous avons pris en main les différents outils liés à Python que nous allons utiliser tout au long de ce semestre.
+
+`uv` est notre boîte à outils.
+Il gère nos projets, la version de Python, et les autres outils.
+
+VS Code sera notre éditeur de code.
+C'est un Environnement de Développement Intégré (IDE en anglais) : au-delà d'éditer le code lui-même, il intègre les différents outils de développement dans une interface visuelle.
+Cela facilite notre développement.
+
+Mypy est le type checker que nous utilisons.
+Nous l'utiliserons systématiquement en mode strict.
+Grâce à l'intégration dans VS Code, nous visualisons immédiatement les erreurs de compilation dans notre programme.
+
+Finalement, pytest est notre testing framework.
+Il découvre automatiquement les fonctions de test, les exécute et produit un rapport des résultats.
+À nouveau, son intégration dans VS Code nous permet d'avoir une vue d'ensemble des résultats, et de les relier directement avec le code source des tests.
+
+Vous trouverez le résultat final de ce tutoriel dans le repository [https://github.com/epfl-cs-112-ma/prise-en-main](https://github.com/epfl-cs-112-ma/prise-en-main).
