@@ -373,12 +373,15 @@ collection.append(x)
 <tr>
 <td>
 {% highlight cpp %}
+# ne renvoie rien
 collection.pop_back()
 {% endhighlight %}
 </td>
 <td>
 {% highlight python %}
-del collection[-1]
+# renvoie la valeur qui
+# a été supprimée
+collection.pop()
 {% endhighlight %}
 </td>
 </tr>
@@ -806,3 +809,108 @@ Les références C++ sont assez uniques en leur genre.
 Le modèle par références de Python est plus répandu : on le retrouve dans de nombreux autres langages, tels que Java, Scala, JavaScript, etc.
 
 ### Python et son modèle par références
+
+Le modèle de Python utilise un seul concept : la *référence à un objet*.
+Dans ce modèle, *toutes* les variables (et champs, éléments de listes, etc.) contiennent une flèche.
+Cette flèche pointe sur un *objet*, ou *instance* d'une classe (on utilise "objet" ou "instance" de manière interchangeable).
+
+Lorsqu'on effectue une assignation, c'est donc bien la flèche qui est copiée, comme avec le modèle de *pointeurs* de C++.
+Toutes les autres opérations, notamment les accès aux champs, suivent la flèche pour travailler sur l'objet.
+
+Rappel : nous travaillons avec la dataclass `Point` (sa version muable), définie comme
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int
+    y: int
+```
+
+Avec les initialisations suivantes :
+
+```python
+p = Point(5, 7)
+q = p
+```
+
+on obtient la situation que l'on avait avec les pointeurs en C++ :
+
+![Points p et q comme références à une instance, 1](/assets/img/point-pointers-1.svg)
+
+La boîte intitulée `Point` est une *instance* de la classe `Point`.
+Les deux variables `p` et `q` contiennent deux flèches qui pointent vers cette même instance.
+
+Si l'on modifie un champ de `p`, nous modifions en fait l'instance pointée par `p`.
+Donc, `q` est affectée :
+
+```python
+p.x = 11
+print(q.x) # 11
+```
+
+![Points p et q comme références à une instance, 2](/assets/img/point-pointers-2.svg)
+
+> Anecdote : si vous jouez à des MMORPGs, vous avez sans doute l'habitude d'entrer dans une *instance* d'un donjon.
+> Il s'agit exactement du même concept !
+> Vous partagez cette instance avec votre groupe, c'est-à-dire que toutes et tous les membres du groupe ont une flèche vers la même instance du donjon.
+> D'autres groupes qui attaquent le même donjon que vous (la même *classe* de donjon), au même moment, font référence à d'autres instances.
+> C'est ainsi que votre groupe peut vaincre ensemble les monstres du donjon, sans pour autant que les autres groupes n'en soient affectés.
+
+En revanche, si l'on réassigne `p` avec une nouvelle instance de `Point`, nous changeons la flèche de `p`, qui est donc déconnecté de `q`.
+
+```python
+p = Point(15, 17)
+print(q.x) # toujours 11
+```
+
+![Points p et q comme références à une instance, 3](/assets/img/point-pointers-5.svg)
+
+On peut donc considérer que *toutes* les variables Python sont des pointeurs.
+On appelle cela des *références*.
+
+Remarquez que Python n'a aucun équivalent de l'instruction C++
+
+```cpp
+*p = Point(30, 20);
+```
+
+C'était la variante qui suivait d'abord la flèche, *puis* écrasait la boîte.
+Cette variante n'existe pas en Python.
+Soit on remplace la flèche elle-même, soit on accède aux *champs* de l'instance.
+On ne peut jamais écraser la boîte d'une instance elle-même.
+
+### Quid des types primitifs ?
+
+Si vous lisez d'autres sources de documentation sur Python ou d'autres langages, il est probable que vous y trouviez des explications du type :
+
+> Les *primitives* sont passées par valeur, et les *objets* sont passés par référence.
+
+Cette distinction est, à mon avis, une complication inutile.
+
+En fait, même les primitives sont des objets !
+Si l'on définit
+
+```python
+x = 5
+```
+
+on le représente graphiquement comme ceci :
+
+![Les primitives comme des objets, 1](/assets/img/primitives-as-objects-1.svg)
+
+Puisque les objets `int`s sont immuables, même si plusieurs variables ont une référence vers le même objet `int`, on ne pourra jamais le détecter.
+Aucun code ne peut modifier le contenu de l'instance, et donc ne peut affecter d'autres parties du code !
+
+C'est donc un atout majeur d'avoir des instances immuables (`frozen=True` pour les dataclasses).
+Sauf bonnes raisons, il faudrait toujours définir nos classes comme immuables.
+
+Mais... si même les `int`s sont des références... n'avons-nous pas menti sur nos diagrammes précédents avec les `Point`s ?
+Eh oui !
+Si l'on veut être exact, on devrait représenter les `Point`s comme ceci :
+
+![Les primitives comme des objets, 2](/assets/img/primitives-as-objects-2.svg)
+
+Pour des valeurs *immuables* simples (et notamment les `int`, `float`, `bool` et `str`), nous ferons souvent la simplification graphique que nous avons faite plus haut.
+En effet, puisque personne ne peut voir la différence, c'est acceptable.

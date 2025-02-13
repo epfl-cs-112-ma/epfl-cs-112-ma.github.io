@@ -6,6 +6,10 @@ section {
   width: 700px;
 }
 
+blockquote {
+  font-style: normal;
+}
+
 td > figure.highlight {
   margin: 0;
 }
