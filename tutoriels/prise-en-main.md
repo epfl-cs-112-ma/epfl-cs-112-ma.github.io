@@ -6,9 +6,9 @@ layout: default
 # Prise en main de Python et VS Code
 
 Ce cours utilise le langage de programmation [Python](https://www.python.org/) pour illustrer les nouveaux concepts.
-Dans cette première série, nous allons nous assurer de prendre en main ce nouveau langage et les outils associés.
+Dans ce tutoriel, nous allons nous assurer de prendre en main ce nouveau langage et les outils associés.
 
-Même si vous avez déjà utilisé Python auparavant, il est indispensable de suivre cette série.
+Même si vous avez déjà utilisé Python auparavant, il est indispensable de suivre ce tutoriel.
 Vous n'avez peut-être pas utilisé tous les outils que nous considérerons requis pour ce cours, et pour votre projet.
 
 Nous utiliserons les outils suivants (il n'est pas nécessaire de suivre ces liens maintenant ; nous allons vous guider pas à pas) :
@@ -522,7 +522,7 @@ Que se passe-t-il ?
 
 ## Conclusion
 
-Dans cette série, nous avons pris en main les différents outils liés à Python que nous allons utiliser tout au long de ce semestre.
+Dans ce tutoriel, nous avons pris en main les différents outils liés à Python que nous allons utiliser tout au long de ce semestre.
 
 `uv` est notre boîte à outils.
 Il gère nos projets, la version de Python, et les autres outils.
