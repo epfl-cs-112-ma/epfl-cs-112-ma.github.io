@@ -5,3 +5,7 @@
 section {
   width: 700px;
 }
+
+td > figure.highlight {
+  margin: 0;
+}
