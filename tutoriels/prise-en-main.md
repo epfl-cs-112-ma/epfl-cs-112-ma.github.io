@@ -35,6 +35,12 @@ Les lignes qui ne commencent pas par `$` sont des *résultats* attendus des comm
 $ curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=~/Desktop/myfiles/.local/bin sh
 ```
 
+Ouvrez ensuite le fichier `~/.profile` (c.-à-d. le fichier `.profile` qui se trouve dans votre "home directory"), et ajoutez la ligne suivante à la fin de celui-ci :
+
+```bash
+export UV_CACHE_DIR=~/Desktop/myfiles/.cache/uv
+```
+
 ### Sur votre propre machine
 
 Suivez les [instructions d'installation de uv](https://docs.astral.sh/uv/getting-started/installation/) pour votre système.
