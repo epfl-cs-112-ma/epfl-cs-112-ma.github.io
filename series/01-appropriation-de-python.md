@@ -145,3 +145,104 @@ Exemples :
 * $\frac{1}{2} \mathbin{/} \frac{-3}{5} = \frac{-5}{6}$
 * $2 \mathbin{/} \frac{-3}{5} = \frac{-10}{3}$
 * $\frac{-3}{5} \mathbin{/} \frac{-3}{5} = 1$
+
+## Dérivation formelle
+
+Le but est ici de faire un programme capable de dériver formellement des expressions arithmétiques.
+
+### Arbres binaires
+
+On utilisera pour cela une structure d'arbre binaire.
+Un arbre binaire est une structure de donnée définie de façon récursive par :
+
+un arbre binaire est
+
+* soit vide ;
+* soit une valeur et deux sous-arbres binaires.
+
+Par exemple, si l'on note un arbre entre parenthèses, en premier son sous-arbre gauche, puis sa valeur et enfin son sous-arbre droit, alors
+```
+(((a) + (b)) * ((c) - (d)))
+```
+est un arbre binaire : la valeur est `*` et les deux sous-arbres sont `((a) + (b))` et `((c) - (d))`.
+On peut le représenter graphiquement comme
+
+![Arbre binaire représentant une expression arithmétique](/assets/img/binary-tree-expression.svg)
+
+De même, `(a)` est un arbre réduit à une valeur (c.-à-d. avec 2 sous-arbres vides).
+
+Dans un fichier `derivatives.py`, définissez une structure de données pour représenter les arbres binaires.
+
+Dans cette structure de données, la valeur sera représentée par un caractère.
+En Python, ce sera donc une `str` de longueur 1.
+
+Nous suggérons d'utiliser la valeur `None` de Python pour représenter un arbre vide.
+Vous pouvez utiliser la notation `A | None` pour le type d'une variable qui peut soit être un `A`, soit être la valeur `None`.
+Pour tester si une valeur `x` est la valeur `None`, Python recommande la syntaxe `x is None`.
+
+Question : pensez-vous que votre structure doivent être muable ou immuable ?
+Dans le doute, commencez par la rendre immuable.
+Vous verrez bien si cela fonctionne ou pas.
+
+### Création d'arbres
+
+Écrivez une fonction permettant de créer un arbre binaire à partir d'une valeur et de deux sous-arbres.
+Vous pourrez également créer une fonction qui créée ce que l'on appelle une *feuille*, c'est-à-dire un arbre réduit à sa seule valeur, dont les 2 sous-arbres sont vides.
+
+### Affichage
+
+Écrivez une fonction permettant d'afficher un arbre binaire en format parenthésé comme illustré plus haut.
+
+On affichera récursivement le sous-arbre de gauche, puis la valeur puis (récursivement) le sous-arbre de droite.
+N'oubliez pas d'écrire des tests pour vos fonctions !
+
+Passons maintenant à la représentation des expressions arithmétiques.
+
+On utilisera pour cela les arbres binaires.
+Nous ne considérerons ici que les opérateurs binaires `+` `-` `/` `*` et `^` (puissance).
+Par exemple, $a + b$ sera représenté par l'arbre
+```
+((a) + (b))
+```
+où `'+'` est la valeur du premier arbre et `(a)` et `(b)` ses sous-arbres.
+
+De même, l'expression arithmétique $(a + b) \times (c + d)$ sera représentée par l'arbre
+```
+(((a) + (b)) * ((c) + (d)))
+```
+
+Construire les arbres représentant les expressions suivantes (4 expressions) :
+
+* $x + a$
+* $(x + a) \times (x + b)$
+* $((x \times x) \times x) + (a \times x)$
+* $(x^a) \mathbin{/} ((x \times x) + (b \times x))$
+
+Indication : commencez par créer les arbres binaires représentant les expressions $a$, $b$ et $x$ (seuls), puis ceux représentant les expressions $x+a$, $x+b$ et $x \times x$.
+
+### Dérivation
+
+Écrivez une fonction `derivative` qui prend un arbre binaire en argument, supposé être une représentation d'une expression arithmétique valide, et un caractère représentant la variable par rapport à laquelle il faut dériver.
+Elle doit retourner l'arbre binaire correspondant à l'expression arithmétique dérivée.
+
+On procédera pour cela de façon récursive en se rappelant les règles usuelles de dérivation :
+
+$$
+\newcommand{\ddx}[1]{\frac{\mathrm{d} #1}{\mathrm{d} x}}
+\begin{align*}
+\ddx{a}                 & = 0 \text{ où $a$ est une constante (ici : caractère différent de $x$)} \\
+\ddx{x}                 & = 1 \\
+\ddx{(f+g)}             & = \ddx{f} + \ddx{g} \\
+\ddx{(f-g)}             & = \ddx{f} - \ddx{g} \\
+\ddx{(f \cdot g)}       & = \ddx{f} \cdot g + f \cdot \ddx{g} \\
+\ddx{(f \mathbin{/} g)} & = \left(\ddx{f} \cdot g - f \cdot \ddx{g} \right) \mathbin{/} (g \cdot g) \\
+\ddx{(f^a)}             & = a \cdot \ddx{f} \cdot f^{a-1} \text{ (où $a$ ne dépend pas de $x$, ce que l'on supposera ici)} \\
+\end{align*}
+$$
+
+
+
+Note importante : on ne veut pas l'arbre minimal de dérivation !
+En clair, on ne cherchera pas à simplifier les expressions obtenues.
+
+Testez votre fonction de dérivation sur les 4 expressions précédentes (au minimum).
