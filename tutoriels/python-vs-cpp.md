@@ -262,6 +262,46 @@ a / b
 {% endhighlight %}
 </td>
 </tr>
+<tr><th colspan="2">Opérateurs booléens</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+!a
+not a
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+not a
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+a && b
+a and b
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+a and b
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+a || b
+a or b
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+a or b
+{% endhighlight %}
+</td>
+</tr>
 <tr><th colspan="2">Appels de fonctions</th></tr>
 <tr>
 <td>
