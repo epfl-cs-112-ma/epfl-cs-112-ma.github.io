@@ -23,6 +23,13 @@ Il sera utile de la garder à portée de main.
 Nous vous recommandons de créer [un nouveau projet Python](/tutoriels/prise-en-main.html#créer-un-projet-python) pour chaque série d'exercices.
 Cela vous permettra d'isoler plus facilement le contenu des différentes semaines.
 
+Cette série contient 3 exercices :
+
+{::options toc_levels="2" /}
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 ## Arithmétique rationnelle
 
 Cet exercice était déjà proposé en fin du premier semestre.
@@ -246,3 +253,14 @@ Note importante : on ne veut pas l'arbre minimal de dérivation !
 En clair, on ne cherchera pas à simplifier les expressions obtenues.
 
 Testez votre fonction de dérivation sur les 4 expressions précédentes (au minimum).
+
+## La sorcière et ses invocations
+
+Vous en voulez plus ?
+Pourquoi ne pas reprendre votre [projet du premier semestre](https://moodle.epfl.ch/mod/assign/view.php?id=1300384), et le réimplémenter en Python ?
+
+Il y a quelques questions de conception à revoir, étant données [les différences de modèles de valeurs et références entre Python et C++](/tutoriels/python-vs-cpp.html#pointeurs-et-r%C3%A9f%C3%A9rences).
+
+* Si vous aviez fait une différence entre `MonsterID` et `Monster`, cette distinction est-elle encore utile ?
+* Quelles structures devraient être muables ? Lesquelles peuvent rester immuables ?
+* Comment adaptez-vous les références `&` des signatures C++ dans un contexte Python ?
