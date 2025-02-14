@@ -914,3 +914,328 @@ Si l'on veut être exact, on devrait représenter les `Point`s comme ceci :
 
 Pour des valeurs *immuables* simples (et notamment les `int`, `float`, `bool` et `str`), nous ferons souvent la simplification graphique que nous avons faite plus haut.
 En effet, puisque personne ne peut voir la différence, c'est acceptable.
+
+## Exceptions
+
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr><th colspan="2">Lancer une exception</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+// Étant donnée une struct Error
+// que nous aurions définie
+throw Error { init... };
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+# Python a un type d'Exception de base
+# que nous allons utiliser.
+raise Exception("error message")
+{% endhighlight %}
+</td>
+</tr>
+<tr><td colspan="2">
+Contrairement à C++, où l'on peut lancer "n'importe quoi" comme exception, en Python les exceptions doivent être des instances des types prévus à cet effet.
+Python possède un certain nombre de types d'exceptions prédéfinis.
+Consultez [la documentation](https://docs.python.org/3/library/exceptions.html#Exception) pour plus d'information.
+<code>Exception</code> est le type de base de la plupart des exceptions.
+</td></tr>
+<tr><th colspan="2">Attraper une exception</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+try {
+  body();
+} catch (Error e) {
+  handler();
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+try:
+    body()
+except Exception as e:
+    handler()
+{% endhighlight %}
+</td>
+</tr>
+<tr><td colspan="2">
+Il peut y avoir plusieurs blocks <code>except</code>, si l'on veut traiter différents types d'exceptions.
+</td></tr>
+<tr><th colspan="2">Relancer une exception</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+try {
+  body();
+} catch (Error e) {
+  handler();
+  throw;
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+try:
+    body()
+except Exception as e:
+    handler()
+    raise
+{% endhighlight %}
+</td>
+</tr>
+<tr><th colspan="2">Effectuer des actions de "nettoyage"</th></tr>
+<tr><td colspan="2">
+Parfois, nous avons besoin d'effectuer des actions de "nettoyage" (cleanup) après un bloc de code.
+Et ce, que le bloc de code se soit bien terminé, ou qu'il ait déclenché une exception.
+C'est peu utile en C++ pour des raisons qui dépassent le cadre de ces explications, mais c'est courant dans le autres langages.
+Les instructions <code>try..finally</code> sont faites pour cela.
+</td></tr>
+<tr>
+<td>
+{% highlight cpp %}
+// Comment on devrait l'écrire en C++
+try {
+  body();
+} catch (...) { // tout attraper
+  // cleanup, puis relancer
+  cleanup();
+  throw;
+}
+// cleanup en cas de succès
+cleanup();
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+try:
+    body()
+finally:
+    cleanup()
+{% endhighlight %}
+</td>
+</tr>
+</tbody>
+</table>
+
+## Entrées/Sorties
+
+### Formattage de chaînes
+
+En C++, on utilise des *modificateurs* sur les flots pour formatter des données.
+En Python, comme dans beaucoup d'autres langages, les fonctions d'entrées/sorties ne gèrent pas elles-mêmes le formattage.
+À la place, on peut construire des *chaînes formattées*, et on envoie ensuite des chaînes formattées sur les sorties.
+Cela veut dire qu'on peut aussi utiliser les mêmes mécaniques pour obtenir des `str` formattées, sans nécessairement les envoyer sur un flot.
+
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr>
+<td>
+{% highlight cpp %}
+cout << setw(6)
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:6}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << setw(6)
+     << setfill('*')
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:*>6}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << setw(6)
+     << setfill('*')
+     << left
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:*<6}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << hex
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:x}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << fixed
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:f}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << scientific
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:e}")
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << setprecision(6)
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:.6}")
+{% endhighlight %}
+</td>
+</tr>
+<tr><td colspan="2">
+Et on peut bien sûr tout combiner...
+</td></tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << scientific
+     << setprecision(6)
+     << setw(15)
+     << setfill('*')
+     << left
+     << foo << endl;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+print(f"{foo:*<15.6e}")
+{% endhighlight %}
+</td>
+</tr>
+</tbody>
+</table>
+
+### Fichiers
+
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr><th colspan="2">Écriture dans un fichier</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+ofstream f("file.txt");
+f << "hello" << endl;
+f.close();
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+# le "w" indique "write"
+with open("file.txt", "w", encoding="utf-8", newline='') as f:
+    f.write("hello\n") # notez le \n
+# close() automatique à la sortie du `with`
+{% endhighlight %}
+</td>
+</tr>
+<tr><td colspan="2">
+<p>L'argument <code>encoding="utf-8"</code> s'assure que l'on manipule toujours les fichiers avec l'encodage UTF-8.
+Sans cet argument, l'encodage peut varier d'un système à l'autre, ce qui est très problématique.</p>
+
+<p>L'argument <code>newline=''</code> empêche Python de transformer les nouvelles lignes <code>\n</code> lorsqu'il écrit dans le fichier.
+Encore une fois, sans cet argument, les résultats peuvent varier d'un système à l'autre.</p>
+</td></tr>
+<tr><th colspan="2">Lecture depuis un fichier</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+ifstream f("file.txt");
+string line;
+f >> line;
+f.close();
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+# le "r" indique "read"
+with open("file.txt", "r", encoding="utf-8", newline='') as f:
+    line = f.readline()
+# close() automatique à la sortie du `with`
+{% endhighlight %}
+</td>
+</tr>
+<tr><th colspan="2">Lecture depuis l'entrée standard</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+cout << "Nom : ";
+string name;
+cin >> name;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+name = input("Nom : ")
+{% endhighlight %}
+</td>
+</tr>
+</tbody>
+</table>
+
+### Gestion des erreurs
+
+C++ utilise des méchanismes silencieux pour les erreurs.
+Il faut explicitement tester `f.fail()` pour gérer ces erreurs.
+
+En Python, toutes les erreurs de manipulations de fichiers, ou de lecture de nombres, déclenchent des *exceptions*.
+Il s'agit donc de traiter adéquatement les exceptions, s'il y a lieu.
+Par exemple, ici on tente de lire deux entiers depuis un fichier, et on vérifie qu'il n'y a pas d'erreur.
+
+```python
+try:
+    with open("file.txt", "r", encoding="utf-8", newline='') as f:
+        x = int(f.readline())
+        y = int(f.readline())
+except OSError as e:
+    print("Le fichier n'a pas pu être lu :")
+    print(e)
+except ValueError as e:
+    print("Une des lignes ne contenait pas un entier en base 10 :")
+    print(e)
+```
