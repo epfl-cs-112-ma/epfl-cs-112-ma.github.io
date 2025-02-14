@@ -10,7 +10,7 @@ Ou : Développement Logiciel
 
 Cours *ex cathedra* : **{{ site.courseinfo.lecture_time }}, {{ site.courseinfo.lecture_room }}**
 
-Exercices et avancement du projet : **{{ site.courseinfo.lecture_time }}, {{ site.courseinfo.lecture_room }}**
+Exercices et avancement du projet : **{{ site.courseinfo.exercises_time }}, {{ site.courseinfo.exercises_rooms }}**
 
 ## Semaine 1
 
