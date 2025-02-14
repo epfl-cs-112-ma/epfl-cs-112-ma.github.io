@@ -48,6 +48,11 @@
           <li><a href="/tutoriels/prise-en-main.html">Python et VS Code</a></li>
           <li><a href="/tutoriels/python-vs-cpp.html">Python vs C++</a></li>
         </ul>
+
+        <p><a href="/series/">Séries</a></p>
+        <ul>
+          <li><a href="/series/01-appropriation-de-python.html">S'approprier Python</a></li>
+        </ul>
       </header>
       <section>
 
@@ -62,6 +67,7 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
     {% if page.use_mermaid %}
     <script>
       for (const elem of document.getElementsByClassName("language-mermaid")) {
@@ -72,6 +78,10 @@
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
       mermaid.initialize({ startOnLoad: true });
     </script>
+    {% endif %}
+
+    {% if page.use_mathjax %}
+    {% include mathjax-support.html %}
     {% endif %}
   </body>
 </html>

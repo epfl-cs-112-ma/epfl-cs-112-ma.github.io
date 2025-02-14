@@ -8,6 +8,13 @@ layout: default
 Cette page contient un résumé des différences principales entre Python et C++.
 Avec le premier cours *ex cathedra*, elle constitue votre principale ressource pour transférer vers Python vos connaissances du premier semestre.
 
+## Sommaire
+
+{::options toc_levels="2..3" /}
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 ## Types
 
 | Type C++                                       | Type Python                      | Valeur C++             | Valeur Python        |

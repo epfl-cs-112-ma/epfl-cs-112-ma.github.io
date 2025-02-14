@@ -18,6 +18,13 @@ Nous utiliserons les outils suivants (il n'est pas nécessaire de suivre ces lie
 * [Mypy](https://mypy-lang.org/) *en mode strict* pour valider les types statiques de nos programmes.
 * [pytest](https://docs.pytest.org/en/stable/) pour *tester* nos programmes.
 
+## Sommaire
+
+{::options toc_levels="2..3" /}
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 ## Installation de `uv`
 
 [uv](https://docs.astral.sh/uv/) sera notre outil à tout faire.

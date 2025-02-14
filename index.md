@@ -21,4 +21,4 @@ Commençant le lundi 17 février
     2. [Prise en main de Python et VS Code](./tutoriels/prise-en-main.html)
     3. [Python vs C++](./tutoriels/python-vs-cpp.html)
 2. Exercices
-    1. TODO Série 1
+    1. [S'approprier Python](./series/01-appropriation-de-python.html)
