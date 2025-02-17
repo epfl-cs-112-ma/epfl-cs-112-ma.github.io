@@ -61,7 +61,7 @@ Dans les deux cas:
 
 ```
 $ uv version
-uv 0.5.29 (ca73c4754 2025-02-05)
+uv 0.6.0
 ```
 
 Vous devriez obtenir un résultat similaire à la deuxième ligne ci-dessus (celle sans `$`).
@@ -138,7 +138,7 @@ C'est très utile, car cela garantit que votre programme fonctionnera de la mêm
 Vous pouvez d'ores et déjà lancer ce programme avec la commande suivante :
 
 ```
-prise-en-main$ uv run hello.py
+prise-en-main$ uv run main.py
 Using CPython 3.13.2
 Creating virtual environment at: .venv
 Hello from prise-en-main!
@@ -148,9 +148,18 @@ Les lignes "Using" et "Creating" ne s'afficheront que la première fois.
 Si vous le lancez à nouveau, vous n'aurez plus que :
 
 ```
-prise-en-main$ uv run hello.py
+prise-en-main$ uv run main.py
 Hello from prise-en-main!
 ```
+
+> ### Pas de `main.py` ?
+>
+> Peut-être utilisez-vous une version de uv inférieure à 0.6.0.
+> Jusqu'à uv 0.5.x, la commande `uv init` créait un fichier `hello.py` au lieu de `main.py`.
+> Vérifiez votre version avec `uv version`.
+> Au besoin, [mettez à jour uv](https://docs.astral.sh/uv/getting-started/installation/#upgrading-uv), puis recommencez la création du projet vierge.
+> Vous pouvez aussi continuer en l'état.
+> Dans ce cas, renommez le fichier `hello.py` en `main.py` pour pouvoir suivre la suite de ce tutoriel.
 
 ### Créer un commit git (optionnel)
 
@@ -181,7 +190,7 @@ Vous devriez obtenir :
 
 Découvrons les fichiers que `uv init` a créés pour nous.
 
-#### `hello.py`
+#### `main.py`
 
 C'est le fichier auquel on s'attend le plus.
 Il s'agit du code source Python de notre projet :
@@ -200,7 +209,7 @@ Son implémentation contient l'appel d'une autre fonction, `print(...)`, qui aff
 Elle correspondrait à une ligne `cout << "..." << endl;` en C++.
 
 Les deux dernière lignes disent ceci : si c'est ce fichier (`__name__`) qui est exécuté comme fichier principal du programme (`"__main__"`), alors appelle la fonction `main()`.
-C'est ce qui se passe quand nous lançons `uv run hello.py`.
+C'est ce qui se passe quand nous lançons `uv run main.py`.
 Contrairement à C++, la fonction `main()` n'est pas appelée automatiquement au démarrage du programme.
 Ce sont ces deux dernières lignes qui s'en chargent explicitement.
 
@@ -265,7 +274,7 @@ En effet, cela permet de s'assurer que votre projet fonctionnera avec exactement
 ### Lancer le programme depuis VS Code.
 
 Il est parfois plus pratique de lancer votre projet directement depuis VS Code.
-Lorsque le fichier `hello.py` est ouvert, cliquez sur l'icône ▷ située tout en haut à droite de l'écran.
+Lorsque le fichier `main.py` est ouvert, cliquez sur l'icône ▷ située tout en haut à droite de l'écran.
 
 ## Activer le type checker mypy (obligatoire !)
 
@@ -297,9 +306,9 @@ Vous pouvez désormais lancer mypy sur votre projet avec :
 
 ```
 $ uv run mypy . # le '.' est important
-hello.py:1: error: Function is missing a return type annotation  [no-untyped-def]
-hello.py:1: note: Use "-> None" if function does not return a value
-hello.py:6: error: Call to untyped function "main" in typed context  [no-untyped-call]
+main.py:1: error: Function is missing a return type annotation  [no-untyped-def]
+main.py:1: note: Use "-> None" if function does not return a value
+main.py:6: error: Call to untyped function "main" in typed context  [no-untyped-call]
 Found 2 errors in 1 file (checked 1 source file)
 ```
 
@@ -313,7 +322,7 @@ Il nous faut remédier à cela.
 Dans VS Code, utiliser la combinaison de touche `Ctrl+Shift+P`, puis utilisez la barre de recherche pour trouver "Developer: Reload Window".
 Après avoir fait des modifications dans votre `pyproject.toml`, il est parfois nécessaire d'utiliser cette commande pour que VS Code en tienne compte.
 
-Ouvrez à nouveau `hello.py`.
+Ouvrez à nouveau `main.py`.
 Au bout d'un petit moment, si ce n'est pas immédiat, certaines lignes apparaîtront en rouge.
 Ce sont les erreurs de mypy.
 
@@ -401,7 +410,7 @@ Mais cela confirme que pytest a bien été installé.
 
 ### Écrire un test
 
-D'abord, définissons une fonction `square` dans notre fichier `hello.py` :
+D'abord, définissons une fonction `square` dans notre fichier `main.py` :
 
 ```python
 def square(x: int) -> int:
@@ -415,22 +424,22 @@ Créez un sous-dossier `tests` (ce nom est une convention partagée par tous les
 Ce fichier restera *vide*.
 Python exige son existence pour reconnaître que le dossier `tests` contient d'autres modules Python.
 
-Ensuite, créez le fichier `test_hello.py`.
+Ensuite, créez le fichier `test_main.py`.
 Ce nom est composé de `test_`, suivi du nom du module qui contient les fonctions que l'on veut tester.
-Puisque `square` est définie dans `hello.py`, les tests pour `square` seront dans `tests/test_hello.py`.
+Puisque `square` est définie dans `main.py`, les tests pour `square` seront dans `tests/test_main.py`.
 Écrivez le contenu suivant :
 
 ```python
-from hello import square
+from main import square
 
 def test_square() -> None:
     assert square(4) == 16
 ```
 
-La première ligne *importe* la fonction `square` depuis le module `hello`.
+La première ligne *importe* la fonction `square` depuis le module `main`.
 C'est similaire à un `#include` de C++.
 Nous avions besoin de `#include <string>` en C++ pour avoir accès au type `string`.
-Ici nous avons besoin d'accéder aux fonctions définies dans `hello.py`.
+Ici nous avons besoin d'accéder aux fonctions définies dans `main.py`.
 En C++, un `#include` importe *tout* ce qu'il contient.
 En Python, on sélectionne explicitement les choses qui nous intéressent.
 
@@ -449,7 +458,7 @@ rootdir: .../prise-en-main
 configfile: pyproject.toml
 collected 1 item
 
-tests\test_hello.py .          [100%]
+tests\test_main.py .          [100%]
 
 === 1 passed in 0.02s ===
 ```
@@ -476,7 +485,7 @@ rootdir: .../prise-en-main
 configfile: pyproject.toml
 collected 1 item
 
-tests\test_hello.py F      [100%]
+tests\test_main.py F      [100%]
 
 === FAILURES ===
 _________ test_square _________
@@ -487,9 +496,9 @@ _________ test_square _________
 E       assert 25 == 20
 E        +  where 25 = square(5)
 
-tests\test_hello.py:5: AssertionError
+tests\test_main.py:5: AssertionError
 === short test summary info ===
-FAILED tests/test_hello.py::test_square - assert 25 == 20
+FAILED tests/test_main.py::test_square - assert 25 == 20
 === 1 failed in 0.06s ===
 ```
 
