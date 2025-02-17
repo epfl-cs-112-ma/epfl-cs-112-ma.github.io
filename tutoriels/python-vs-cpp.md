@@ -749,6 +749,27 @@ class Point:
 
 Dès la deuxième semaine du cours, nous introduirons la notion plus générale de classe, qui est au coeur de la méthodologie orientée objet.
 
+## Alias de type
+
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr><th colspan="2">Définition d'un alias de type</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+using int_vec = vector<int>;
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+type IntList = list[int]
+{% endhighlight %}
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Pointeurs et références
 
 Attention, ici, ça pique !
