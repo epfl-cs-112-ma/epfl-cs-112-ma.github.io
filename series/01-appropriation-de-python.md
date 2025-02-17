@@ -6,6 +6,8 @@ use_mathjax: true
 
 # Série 1 : S'approprier Python
 
+[Solutions](https://github.com/epfl-cs-112-ma/solutions-serie-01) (excepté le dernier exercice, qui sera complètement personnalisé)
+
 Cette première série a deux objectifs :
 
 * Récapituler les différentes notions du premier semestre.
