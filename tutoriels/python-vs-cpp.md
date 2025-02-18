@@ -44,21 +44,37 @@ En Python, il existe une vraie valeur de type `None`, qui s'écrit aussi `None`.
 
 ## Commentaires
 
-En C++, il y a deux types de commentaires :
-
-```cpp
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr><th colspan="2">Commentaire de ligne</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
 // commentaire de ligne
-
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
+# commentaire de ligne
+{% endhighlight %}
+</td>
+</tr>
+<tr><th colspan="2">Commentaire multi-lignes</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
 /* commentaire
  * sur plusieurs lignes
  */
-```
-
-En Python, il n'existe que des commentaires de ligne :
-
-```python
-# commentaire de ligne
-```
+{% endhighlight %}
+</td>
+<td>
+N/A
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Définition de fonction
 
@@ -70,25 +86,6 @@ type_de_retour nom_fonction(type_param1 param1, ...) {
 }
 ```
 
-Par exemple :
-
-```cpp
-void printInt(int x) {
-  std::cout << x << std:endl;
-}
-
-bool negative(int x) {
-  return x < 0;
-}
-
-/** Retourne `x + y`.
- *  `y` vaut 1 par défaut.
- */
-int inc(int x, int y = 1) {
-  return x + y;
-}
-```
-
 En Python, la syntaxe est
 
 ```python
@@ -96,25 +93,67 @@ def nom_fonction(param1: type_param1, ...) -> type_de_retour:
     # corps
 ```
 
-Le corps d'une fonction est indenté de 4 espaces.
-C'est l'indentation qui détermine où s'arrête le corps, comme pour tous les autres blocs.
-
-Par exemple:
-
-```python
+<table>
+<thead><tr><th>C++</th><th>Python</th></tr></thead>
+<tbody>
+<tr><th colspan="2">Quelques exemples</th></tr>
+<tr>
+<td>
+{% highlight cpp %}
+void printInt(int x) {
+  std::cout << x << std:endl;
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
 def print_int(x: int) -> None:
     print(x)
-
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+bool negative(int x) {
+  return x < 0;
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
 def negative(x: int) -> bool:
     return x < 0
-
+{% endhighlight %}
+</td>
+</tr>
+<tr>
+<td>
+{% highlight cpp %}
+/** Retourne `x + y`.
+ *  `y` vaut 1 par défaut.
+ */
+int inc(int x, int y = 1) {
+  return x + y;
+}
+{% endhighlight %}
+</td>
+<td>
+{% highlight python %}
 def inc(x: int, y: int = 1) -> int:
     """Retourne `x + y`.
 
     `y` vaut 1 par défaut.
     """
     return x + y
-```
+{% endhighlight %}
+</td>
+</tr>
+</tbody>
+</table>
+
+Le corps d'une fonction est indenté de 4 espaces.
+C'est l'indentation qui détermine où s'arrête le corps, comme pour tous les autres blocs.
 
 La chaîne entre `"""` s'appelle la *docstring* d'une fonction.
 C'est dans cette chaîne que l'on place la documentation/spécification.
