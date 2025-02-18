@@ -10,6 +10,10 @@ section p {
   text-align: justify;
 }
 
+td > p:last-child {
+  margin: 0;
+}
+
 blockquote {
   font-style: normal;
 }

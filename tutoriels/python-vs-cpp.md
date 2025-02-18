@@ -435,12 +435,12 @@ not collection
 <tr>
 <td>
 {% highlight cpp %}
-collection.clear(x)
+collection.clear()
 {% endhighlight %}
 </td>
 <td>
 {% highlight python %}
-collection.clear(x)
+collection.clear()
 {% endhighlight %}
 </td>
 </tr>
@@ -459,7 +459,7 @@ collection.append(x)
 <tr>
 <td>
 {% highlight cpp %}
-# ne renvoie rien
+// ne renvoie rien
 collection.pop_back()
 {% endhighlight %}
 </td>
