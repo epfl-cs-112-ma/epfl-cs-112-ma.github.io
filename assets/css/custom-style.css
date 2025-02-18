@@ -6,6 +6,10 @@ section {
   width: 700px;
 }
 
+section p {
+  text-align: justify;
+}
+
 blockquote {
   font-style: normal;
 }

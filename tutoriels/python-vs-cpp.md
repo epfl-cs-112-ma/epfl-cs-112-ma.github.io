@@ -325,8 +325,8 @@ foo(a, b)
 </td>
 </tr>
 <tr><td colspan="2">
-En Python, on peut explicitement écrire le nom d'un paramètre lors de l'appel.
-C'est le plus souvent utilisé pour des paramètres qui ont une valeur par défaut.
+<p>En Python, on peut explicitement écrire le nom d'un paramètre lors de l'appel.
+C'est le plus souvent utilisé pour des paramètres qui ont une valeur par défaut.</p>
 </td></tr>
 <tr>
 <td>
@@ -365,8 +365,8 @@ collection[i]
 </td>
 </tr>
 <tr><td colspan="2">
-Le <code>[i]</code> de Python ressemble plus au <code>.at(i)</code> de C++ : il vérifie explicitement que <code>i</code> n'est pas trop grand.
-Les indices négatifs, quant à eux, comptent à rebours à partir de la fin.
+<p>Le <code>[i]</code> de Python ressemble plus au <code>.at(i)</code> de C++ : il vérifie explicitement que <code>i</code> n'est pas trop grand.
+Les indices négatifs, quant à eux, comptent à rebours à partir de la fin.</p>
 </td></tr>
 <tr>
 <td>
@@ -502,8 +502,8 @@ else:
 </td>
 </tr>
 <tr><td colspan="2">
-Remarquez le mot-clef <code>elif</code> utisé en Python si on veut enchaîner plusieurs conditions.
-On ne peut pas utiliser <code>else if</code>, car <code>else</code> doit directement être suivi d'un <code>:</code> et d'un bloc indenté.
+<p>Remarquez le mot-clef <code>elif</code> utisé en Python si on veut enchaîner plusieurs conditions.
+On ne peut pas utiliser <code>else if</code>, car <code>else</code> doit directement être suivi d'un <code>:</code> et d'un bloc indenté.</p>
 </td></tr>
 <tr><th colspan="2">Itération sur une collection</th></tr>
 <tr>
@@ -522,7 +522,9 @@ for elem in collection:
 </td>
 </tr>
 <tr><th colspan="2">Itération par indices</th></tr>
-<tr><td colspan="2">De <code>0</code> (inclus) à <code>n</code> (exclu)</td></tr>
+<tr><td colspan="2">
+<p>De <code>0</code> (inclus) à <code>n</code> (exclu)</p>
+</td></tr>
 <tr>
 <td>
 {% highlight cpp %}
@@ -538,7 +540,9 @@ for i in range(n):
 {% endhighlight %}
 </td>
 </tr>
-<tr><td colspan="2">De <code>start</code> (inclus) à <code>end</code> (exclu)</td></tr>
+<tr><td colspan="2">
+<p>De <code>start</code> (inclus) à <code>end</code> (exclu)</p>
+</td></tr>
 <tr>
 <td>
 {% highlight cpp %}
@@ -554,7 +558,9 @@ for i in range(start, end):
 {% endhighlight %}
 </td>
 </tr>
-<tr><td colspan="2">De <code>start</code> (inclus) à <code>end</code> (exclu) par pas de <code>step</code></td></tr>
+<tr><td colspan="2">
+<p>De <code>start</code> (inclus) à <code>end</code> (exclu) par pas de <code>step</code></p>
+</td></tr>
 <tr>
 <td>
 {% highlight cpp %}
@@ -572,8 +578,8 @@ for i in range(start, end, step):
 </td>
 </tr>
 <tr><td colspan="2">
-Les itérations ci-dessus sont <em>valides</em> avec <code>n == 0</code> ou <code>end == start</code>.
-Elles n'effectuent alors aucune itération, en Python comme en C++.
+<p>Les itérations ci-dessus sont <em>valides</em> avec <code>n == 0</code> ou <code>end == start</code>.
+Elles n'effectuent alors aucune itération, en Python comme en C++.</p>
 </td></tr>
 <tr><th colspan="2">Boucles de type "Tant que"</th></tr>
 <tr>
@@ -592,8 +598,8 @@ while cond:
 </td>
 </tr>
 <tr><td colspan="2">
-Python n'a pas de boucle de type "Répéter ... Tant que".
-Si vraiment nécessaire, vous pouvez obtenir le même effet avec une boucle <code>while</code>.
+<p>Python n'a pas de boucle de type "Répéter ... Tant que".
+Si vraiment nécessaire, vous pouvez obtenir le même effet avec une boucle <code>while</code>.</p>
 </td></tr>
 <tr>
 <td>
@@ -642,8 +648,8 @@ match value:
 </td>
 </tr>
 <tr><td colspan="2">
-L'instruction <code>match</code> de Python est plus versatile que le <code>switch</code> de C++.
-Si vous voulez voir ce que vous pouvez faire d'autre avec, <a href="https://docs.python.org/3/tutorial/controlflow.html#match-statements">consultez sa documentation</a>.
+<p>L'instruction <code>match</code> de Python est plus versatile que le <code>switch</code> de C++.
+Si vous voulez voir ce que vous pouvez faire d'autre avec, <a href="https://docs.python.org/3/tutorial/controlflow.html#match-statements">consultez sa documentation</a>.</p>
 </td></tr>
 </tbody>
 </table>
@@ -1006,10 +1012,10 @@ raise Exception("error message")
 </td>
 </tr>
 <tr><td colspan="2">
-Contrairement à C++, où l'on peut lancer "n'importe quoi" comme exception, en Python les exceptions doivent être des instances des types prévus à cet effet.
+<p>Contrairement à C++, où l'on peut lancer "n'importe quoi" comme exception, en Python les exceptions doivent être des instances des types prévus à cet effet.
 Python possède un certain nombre de types d'exceptions prédéfinis.
-Consultez [la documentation](https://docs.python.org/3/library/exceptions.html#Exception) pour plus d'information.
-<code>Exception</code> est le type de base de la plupart des exceptions.
+Consultez <a href="https://docs.python.org/3/library/exceptions.html#Exception">la documentation</a> pour plus d'information.
+<code>Exception</code> est le type de base de la plupart des exceptions.</p>
 </td></tr>
 <tr><th colspan="2">Attraper une exception</th></tr>
 <tr>
@@ -1032,7 +1038,7 @@ except Exception as e:
 </td>
 </tr>
 <tr><td colspan="2">
-Il peut y avoir plusieurs blocks <code>except</code>, si l'on veut traiter différents types d'exceptions.
+<p>Il peut y avoir plusieurs blocks <code>except</code>, si l'on veut traiter différents types d'exceptions.</p>
 </td></tr>
 <tr><th colspan="2">Relancer une exception</th></tr>
 <tr>
@@ -1058,10 +1064,10 @@ except Exception as e:
 </tr>
 <tr><th colspan="2">Effectuer des actions de "nettoyage"</th></tr>
 <tr><td colspan="2">
-Parfois, nous avons besoin d'effectuer des actions de "nettoyage" (cleanup) après un bloc de code.
+<p>Parfois, nous avons besoin d'effectuer des actions de "nettoyage" (cleanup) après un bloc de code.
 Et ce, que le bloc de code se soit bien terminé, ou qu'il ait déclenché une exception.
 C'est peu utile en C++ pour des raisons qui dépassent le cadre de ces explications, mais c'est courant dans le autres langages.
-Les instructions <code>try..finally</code> sont faites pour cela.
+Les instructions <code>try..finally</code> sont faites pour cela.</p>
 </td></tr>
 <tr>
 <td>
@@ -1197,7 +1203,7 @@ print(f"{foo:.6}")
 </td>
 </tr>
 <tr><td colspan="2">
-Et on peut bien sûr tout combiner...
+<p>Et on peut bien sûr tout combiner...</p>
 </td></tr>
 <tr>
 <td>
