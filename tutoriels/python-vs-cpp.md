@@ -854,7 +854,7 @@ Dans ce cas, les *variables* `p` et `q` sont toujours des boîtes, mais les *val
 Copier `q = p` revient donc à copier la *valeur pointeur*, et non pas la valeur *pointée*.
 
 ```cpp
-shared_ptr<Point> p = make_shared<Point>({ 5, 7 });
+shared_ptr<Point> p = make_shared<Point>(Point { 5, 7 });
 shared_ptr<Point> q = p; // copie de la *valeur pointeur*
 ```
 
@@ -869,7 +869,7 @@ En effet, *c'est la même boîte* !
 
 ```cpp
 p->x = 11;
-cout << q->x << endl; // toujours 11
+cout << q->x << endl; // 11
 ```
 
 ![Points p et q comme pointeurs, 2](/assets/img/point-pointers-2.svg)
@@ -881,6 +881,7 @@ En C++, il y a en fait moyen d'obtenir chacun de ces comportements, en fonction 
 Si on utilise
 ```cpp
 *p = Point { 30, 20 };
+cout << q->x << endl; // 30
 ```
 alors on suit d'abord la flèche du pointeur (l'opérateur `*`), *puis* on écrase le contenu de la boîte.
 On se retrouve alors avec la situation suivante, dans laquelle `p` et `q` sont en effet toujours connectés.
@@ -889,7 +890,8 @@ On se retrouve alors avec la situation suivante, dans laquelle `p` et `q` sont e
 
 Par contre, si l'on écrit
 ```cpp
-p = make_share<Point>({ 15, 17 });
+p = make_shared<Point>(Point { 15, 17 });
+cout << q->x << endl; // toujours 30
 ```
 alors c'est *la valeur pointeur* que l'on écrase, et l'on met une nouvelle flèche à la place.
 On écrase la boîte nommée `p`, et non pas la boîte *pointée*.
