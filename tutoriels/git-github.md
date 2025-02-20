@@ -111,15 +111,25 @@ Il s'agira donc de tracer les évolutions d'un "projet", mais uniquement sur vot
 ### Initialiser un repo
 
 Commencez par créer un nouveau dossier vide `tuto-git`.
-Dans ce dossier, *initialisez* un nouveau *repository* git (aussi connu sous les noms de "repo", "dépôt" ou "référentiel") avec `git init` :
+Dans ce dossier, *initialisez* un nouveau *repository* git (aussi connu sous les noms de "repo", "dépôt" ou "référentiel") avec `git init`.
 
-```
+```bash
+$ pwd # où est-on exactement ?
+/home/username
+$ cd Desktop/myfiles/ # ou un autre dossier comme `Documents/`
+$ mkdir projets-poo # crée un dossier projets-poo pour tous vos projets de ce cours
+$ cd projets-poo # rentrer à l'intérieur de ce dossier
+$ mkdir tuto-git
 $ cd tuto-git
+$ pwd
+/home/username/Desktop/myfiles/projets-poo/tuto-git
 $ git init
 Initialized empty Git repository in .../tuto-git/.git/
 ```
 
-Le dossier `tuto-git`, et tous ses (futures) sous-dossiers, est désormais considéré comme un repo git.
+⚠️ Vérifiez bien, par exemple avec `pwd`, que vous êtes dans le dossier attendu avant d'exécuter `git init`.
+
+Le dossier `tuto-git`, et tous ses (futurs) sous-dossiers, est désormais considéré comme un repo git.
 À tout moment, vous pouvez consulter l'état d'un repo avec `git status` :
 
 ```
@@ -424,7 +434,7 @@ SSH est basé sur un système de chiffrement asymétrique, avec une clef publiqu
 Ici, nous vous renvoyons vers la [documentation officielle de GitHub sur SSH](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh), qui est vraiment très bien.
 En particulier, vous devrez suivre les étapes suivantes :
 
-* [Génération d'une nouvelle clé SSH et ajout de celle-ci à ssh-agent](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+* [Génération d'une nouvelle clé SSH et ajout de celle-ci à ssh-agent](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) (excepté la dernière section sur l'usage d'une clef de sécurité matérielle)
 * [Ajout d'une nouvelle clé SSH à votre compte GitHub](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 * [Test de votre connexion SSH](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
 * [Utilisation des phrases secrètes de clé SSH](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases)
@@ -434,7 +444,7 @@ En particulier, vous devrez suivre les étapes suivantes :
 Windows ne contient pas de client SSH par défaut.
 C'est pourquoi git bash vous en fournit un aussi.
 
-Dependant, beaucoup d'utilisateurs Windows préfèrent utiliser [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) à la place.
+Cependant, beaucoup d'utilisateurs Windows préfèrent utiliser [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) à la place.
 À vous de voir si vous voulez explorer cette option.
 Si oui, consultez par exemple [ce document sur l'utilisation de Putty avec GitHub sur Windows](https://gist.github.com/jbrown123/16ede76b87aab1491c6b1dc809a4e03c).
 

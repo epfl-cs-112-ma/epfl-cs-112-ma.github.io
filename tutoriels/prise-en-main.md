@@ -188,6 +188,9 @@ Vous devriez obtenir :
 
 ![Première ouverture de prise-en-main dans VS Code](/assets/img/vs-code-prise-en-main-premiere-ouverture.png)
 
+⚠️ Vérifiez que le titre de la fenêtre de VS Code indique bien `prise-en-main` (et non son dossier parent `projets`, par exemple).
+Si ce n'est pas le cas, vous n'avez pas sélectionné le bon dossier, et les choses ne vont pas bien se passer.
+
 Découvrons les fichiers que `uv init` a créés pour nous.
 
 #### `main.py`
