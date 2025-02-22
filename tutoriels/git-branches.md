@@ -688,7 +688,7 @@ Une fois ceci fait, Bob peut récupérer à son tour cette version fusionnée av
 
 ### En cas de conflit
 
-Répétez la manoeuvre, mais cette fois modifiez la même ligne.
+Répétez la manœuvre, mais cette fois modifiez la même ligne.
 Par exemple, Alice peut faire un `git push` avec un nouveau commit, puis Bob tente de faire de même.
 Au moment pour Bob de faire `git pull` (ou `git merge origin/main`), il se verra face à un *conflit*.
 Ce sera alors à Bob de régler ce conflit, comme nous l'avons fait plus haut, avant de pouvoir continuer son `git push`.

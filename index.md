@@ -45,7 +45,7 @@ Commençant le lundi 24 février
 
 1. Tutoriels
     1. [git, branches et collaboration](./tutoriels/git-branches.html)
-    2. Classes et méthodes (à venir)
+    2. [Classes et méthodes](./tutoriels/classes.html)
 2. Exercices
     1. À venir
 3. Projet
