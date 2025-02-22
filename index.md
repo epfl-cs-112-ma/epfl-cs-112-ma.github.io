@@ -38,3 +38,15 @@ Commençant le lundi 17 février
     1. [Python vs C++](./tutoriels/python-vs-cpp.html)
 3. Exercices
     1. [S'approprier Python](./series/01-appropriation-de-python.html)
+
+## Semaine 2
+
+Commençant le lundi 24 février
+
+1. Tutoriels
+    1. [git, branches et collaboration](./tutoriels/git-branches.html)
+    2. Classes et méthodes (à venir)
+2. Exercices
+    1. À venir
+3. Projet
+    1. Démarrage du projet (à venir)
