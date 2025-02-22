@@ -189,8 +189,12 @@ Nous suggérons d'utiliser la valeur `None` de Python pour représenter un arbre
 Vous pouvez utiliser la notation `A | None` pour le type d'une variable qui peut soit être un `A`, soit être la valeur `None`.
 Pour tester si une valeur `x` est la valeur `None`, Python recommande la syntaxe `x is None`.
 
-> Vous pourriez obtenir une erreur du type *"Tree" is not defined (Pylance)* sur l'usage de `Tree` comme type au sein de la dataclass `Tree`.
-> Si c'est le cas, définissez explicitement un [alias de type](/tutoriels/python-vs-cpp.html#alias-de-type) avant la classe, `type TreeAlias = Tree`, puis utilisez `TreeAlias` à l'intérieur de `Tree` à la place.
+> Vous pourriez obtenir un avertissement du type *"Tree" is not defined (Pylance)* (ou une `NameError` à l'exécution) sur l'usage de `Tree` comme type au sein de la dataclass `Tree`.
+> Si c'est le cas, ajoutez la ligne suivante *au tout début* du fichier :
+>
+> ```python
+> from __future__ import annotations
+> ```
 
 Question : pensez-vous que votre structure doivent être muable ou immuable ?
 Dans le doute, commencez par la rendre immuable.
