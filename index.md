@@ -18,9 +18,14 @@ Exercices et avancement du projet : **{{ site.courseinfo.exercises_time }}, {{ s
 
 Évaluations :
 
-* Midterm : 17 %
-* Examen final : 33 %
-* Projet (par binôme) : 50 % -- minoré à 1,5x la note des deux examens
+| Évaluation         | Date                     | Pourcentage |
+|--------------------|--------------------------|-------------|
+| Midterm            | 17 avril, 9h15-11h       | 17 %        |
+| Final              | 22 mai, 9h15-11h         | 33 %        |
+| Projet, par binôme | 30 mai, 23h58 (deadline) | 50 %        |
+
+⚠️ La note du projet est **minorée** à 1,5x la note des deux examens.
+Par exemple, si vous obtenez 20/50 sur la somme de vos deux examens, votre de note de projet ne peut pas aller plus haut que 30/50, même s'il est parfait.
 
 ## Semaine 1
 
