@@ -6,8 +6,12 @@ section {
   width: 700px;
 }
 
-section p {
+section p, section li {
   text-align: justify;
+}
+
+li > ul, li > ol {
+  margin-bottom: 0;
 }
 
 td > p:last-child {
