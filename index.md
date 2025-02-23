@@ -51,4 +51,4 @@ Commençant le lundi 24 février
 3. Exercices
     1. [Classes et méthodes](./series/02-classes.html)
 4. Projet
-    1. Démarrage du projet (à venir)
+    1. [Démarrage du projet](./projet/) (instructions pour la première semaine disponibles jeudi matin)
