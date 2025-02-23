@@ -5,8 +5,14 @@ layout: default
 
 # Tutoriels et références
 
+## Tutoriels
+
 * [Prise en main de git et GitHub](./git-github.html)
 * [Prise en main de Python et VS Code](./prise-en-main.html)
-* [Python vs C++](./python-vs-cpp.html)
 * [git, branches et collaborations](./git-branches.html)
 * [Classes et méthodes](./classes.html)
+
+## Références
+
+* [Python vs C++](./python-vs-cpp.html)
+* [Création rapide d'un projet](./quick-projet-setup.html)
