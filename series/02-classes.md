@@ -6,6 +6,8 @@ use_mathjax: true
 
 # Série 2 : Classes et méthodes
 
+[Solutions](https://github.com/epfl-cs-112-ma/solutions-serie-02)
+
 Dans cette seconde série d'exercices, nous vous proposons d'explorer les concepts de classes et méthodes.
 Nous attendons de vous que vous mettiez en œuvre les notions d'interface et d'encapsulation de manière adéquate.
 
@@ -50,6 +52,8 @@ import math
 
 print(math.pi)
 ```
+
+De même, la racine carrée de `x` s'obtient avec `math.sqrt(x)`.
 
 ### Définition élémentaire
 
