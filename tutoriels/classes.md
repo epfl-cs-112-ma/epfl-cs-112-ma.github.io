@@ -221,6 +221,43 @@ Mypy est capable d'inférer le type des attributs d'après le type de valeur qui
 Cependant, cela rend le code moins lisible.
 Je recommende donc très fortement de systématiquement déclarer tous les attributs des classes en amont.
 
+### La méthode magique `__str__`
+
+Si vous tentez d'afficher directement une `Person`, vous obtiendrez un résultat peu compréhensible :
+
+```python
+class Person:
+    ... # comme avant
+
+p = Person("Arthur", "Weasley")
+print(p) # affiche <__main__.Person object at 0x0000020FBC4F8980>
+```
+
+On peut améliorer ceci.
+La méthode magique `__str__` définit comment un objet doit être convertit en chaîne de caractères.
+Elle ne peut pas prendre de paramètre en dehors de `self`.
+Dans notre cas, on pourrait réutiliser le nom complet comme représentation textuelle pratique d'une `Person` :
+
+```python
+class Person:
+    ... # comme avant
+
+    def __str__(sefl) -> str:
+        return self.full_name()
+
+p = Person("Arthur", "Weasley")
+print(p) # affiche Arthur Weasley
+```
+
+Cette même méthode est utilisée par les chaînes formattées de type `f"..."`.
+
+```python
+print(f"Bonjour {p}.") # affiche Bonjour Arthur Weasley.
+```
+
+Même si ce n'est pas nécessaire à la *logique* de votre programme, il est très utile de définir une méthode `__str__` sensée.
+En effet, elle facilite énormément le débogage à base de `print` des variables de votre programme.
+
 ## Encapsulation
 
 Avec l'ajout des méthodes, une nouvelle opportunité se dessine pour mieux concevoir des programmes : *l'encapsulation*.
