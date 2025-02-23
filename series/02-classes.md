@@ -99,6 +99,8 @@ La classe `Triangle` doit proposer au moins deux méthodes :
   Pour rappel, un triangle est isocèle s'il possède au moins 2 côtés de même longueur.
 * `perimeter` donne le périmètre du triangle.
 
+Pour information, le triangle $\langle (0, 0, 1), (-3, 4, 5), (3, 4, -3) \rangle$ est isocèle.
+
 ## Le petit train
 
 Dans cet exercice, nous cherchons à modéliser un petit train dont la progression est contrôlée par des feux de signalisation.
