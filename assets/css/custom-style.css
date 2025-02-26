@@ -25,3 +25,14 @@ blockquote {
 td > figure.highlight {
   margin: 0;
 }
+
+a > code {
+  color: #267CB9;
+}
+
+.floating-illustration-image {
+  float: right;
+  width: 40%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
