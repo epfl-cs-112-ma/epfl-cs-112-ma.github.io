@@ -184,6 +184,15 @@ Je me permets également de vous rappeler le code d'honneur et le code de déont
 
 Dans tous les cas, il est fortement conseillé de pouvoir expliquer toutes les lignes de code de son projet.
 
+### Aide extérieure sur Arcade
+
+Arcade dispose d'une communauté disposée à aider ses utilisatrices et utilisateurs.
+Cependant, vous devez toujours *d'abord* vous adresser à l'aide disponible à l'EPFL : vos collègues, les assistantes et assistants, et moi-même.
+
+Tournez-vous vers l'aide extérieure *uniquement* si l'équipe d'enseignement vous y invite explicitement.
+
+**En aucun cas** n'est-il permis de poster du code du projet en public (ni sur le forum Ed Discussions).
+
 ### Intelligences artificielles
 
 L'usage d'intelligence artificielle *n'est pas interdit*.
