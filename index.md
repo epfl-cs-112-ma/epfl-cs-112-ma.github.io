@@ -27,6 +27,10 @@ Exercices et avancement du projet : **{{ site.courseinfo.exercises_time }}, {{ s
 ⚠️ La note du projet est **minorée** à 1,5x la note des deux examens.
 Par exemple, si vous obtenez 20/50 sur la somme de vos deux examens, votre de note de projet ne peut pas aller plus haut que 30/50, même s'il est parfait.
 
+## Code utilisé pendant les cours
+
+Vous retrouverez les bouts de code écrits chaque semaine pendant les cours [sur le repo `lectures`](https://github.com/epfl-cs-112-ma/lectures).
+
 ## Semaine 1
 
 Commençant le lundi 17 février
