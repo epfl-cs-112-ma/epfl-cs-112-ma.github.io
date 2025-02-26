@@ -24,7 +24,7 @@ Lors des deux dernières semaines, vous aurez pratiquement quartier libre pour f
 
 ## Étapes de la réalisation du projet
 
-* Semaine 1 – Découverte d'Arcade : personnage, murs fixes, pièces à collecter et caméra (à venir jeudi matin)
+* [Semaine 1 – Découverte d'Arcade](./01-decouverte.html) : personnage, murs fixes, pièces à collecter et caméra
 
 ## Administration
 
