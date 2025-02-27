@@ -55,7 +55,7 @@ Pour rappel, préférez les structures *immuables* autant que possible.
 
 Définissez aussi une fonction `frac_to_str()` permettant de convertir un rationnel en chaîne de caractères.
 
-Testez votre fonction (écrivez des tests avec **pytest**) avec, au moins, les 3 rationnels donnés en exemple ci-dessus.
+Testez votre fonction ([écrivez des tests avec **pytest**](/tutoriels/prise-en-main.html#écrire-un-test)) avec, au moins, les 3 rationnels donnés en exemple ci-dessus.
 Le résultat de `frac_to_str` pour deux-ci devrait être :
 
 ```

@@ -33,7 +33,7 @@ Cette série contient 3 exercices :
 On s'intéresse ici à concevoir une classe `Disk` représentant un disque dans le plan.
 Un disque est caractérisé par un centre et un rayon $> 0$.
 
-N'oubliez pas d'écrire des tests pour tout ce que vous définissez.
+N'oubliez pas [d'écrire des tests](/tutoriels/prise-en-main.html#écrire-un-test) pour tout ce que vous définissez.
 
 > Vous pourriez obtenir un avertissement du type *"Disk" is not defined (Pylance)* (ou une `NameError` à l'exécution) sur l'usage de `Disk` comme type au sein de la classe `Disk` elle-même.
 > Si c'est le cas, ajoutez la ligne suivante *au tout début* du fichier :
