@@ -18,6 +18,11 @@ Si vous n'avez *pas* encore de binôme, cette semaine est encore une période de
 Il est parfaitement possible de la compléter individuellement, en attendant de trouver votre binôme.
 Vous pourrez alors partir de l'état de l'un ou de l'autre de vos projets respectifs.
 
+{::options toc_levels="2..3" /}
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 ## Création du projet, affichage d'un écran bleu
 
 ### Création
