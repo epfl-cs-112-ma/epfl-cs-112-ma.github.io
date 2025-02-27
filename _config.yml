@@ -9,6 +9,10 @@ remote_theme: pages-themes/minimal@v0.2.0
 plugins:
   - jekyll-remote-theme
 
+relative_links:
+  enabled: false
+  collections: false
+
 title: EPFL CS-112(j) POO
 description: Course Website
 lang: fr-CH
