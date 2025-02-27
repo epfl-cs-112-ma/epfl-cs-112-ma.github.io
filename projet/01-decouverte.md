@@ -346,7 +346,12 @@ On peut appeler `draw()` directement sur une `SpriteList`, et cela envoie toute 
 En fait, Arcade ne sait *que* utiliser `SpriteList`.
 Quand on appelle `arcade.draw_sprite`, il crée une `SpriteList` temporaire pour l'envoyer au GPU !
 
-On va donc déjà stocker notre joueuse dans une `SpriteList` dédiée, et l'utiliser pour la dessiner :
+On va donc déjà stocker notre joueuse dans une `SpriteList` dédiée, et l'utiliser pour la dessiner.
+
+> Ce qui suit est une vue de `git diff`.
+> Les lignes qui commencent par `@@` indiquent qu'on "saute" une section de code qui ne change pas.
+> Par exemple, la création de `self.player_sprite_list = arcade.SpriteList()` est bel et bien dans la méthode `setup()`, pas dans la méthode `__init__()`.
+> Référez-vous au contexte donné.
 
 ```diff
 @@ -4,6 +4,7 @@ class GameView(arcade.View):
@@ -381,7 +386,7 @@ Il est temps de vous faire réllement travailler un peu, donc cette fois nous ne
    Construisez celle-ci avec `arcade.SpriteList(use_spatial_hash=True)`.
    Le "spatial hashing" augmente les performances pour une `SpriteList` qui ne contient que des sprites qui ne bougent (presque) jamais.
 2. Dans `setup()`, écrivez deux boucles pour placer les sprites suivants dans cette `wall_list` :
-    1. Des sprites d'herbe aux positions $y = 32$ et $x \in \\{0, 64, 128, \ldots, (1250-64)\\}$.
+    1. Des sprites d'herbe aux positions $y = 32$ et $x \in \\{0, 64, 128, \ldots, (1280-64)\\}$.
        Utilisez la ressource `":resources:images/tiles/grassMid.png"`.
        Ajoutez aussi le paramètre `scale=0.5` dans le constructeur de `arcade.Sprite`.
     2. Des sprites de caisses aux positions $y = 96$ et $x \in \\{256, 512, 768\\}$.

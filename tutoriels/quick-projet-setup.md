@@ -65,7 +65,10 @@ $ git commit -m "Initial commit."
 ```
 
 Créer un nouveau repo *privé* sur GitHub.
-Une fois créé, récupéré son URL SSH `git@...`.
+
+⚠️ Ne *pas* cocher la case "Add a readme file", ne *pas* sélectionner de "`.gitignore` template" ni de licence à ce stade. ⚠️
+
+Une fois créé, récupérer l'URL SSH `git@...` du repo.
 Connecter le nouveau projet à ce repo et pousser le commit initial.
 
 ```
