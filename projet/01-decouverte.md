@@ -876,3 +876,9 @@ Faites en sorte de ne charger (`load_sound`) chaque son qu'une seule fois, et no
 Vous pourriez aussi naviguer dans la documentation de Arcade pour voir s'il y a plus d'explications ou d'exemples sur l'utilisation des sons.
 
 **Remarque :** il n'est pas possible de tester automatiquement les sons ; nous ne nous attendons donc pas à ce que vous le fassiez.
+
+## Compléter le log
+
+N'oubliez pas de compléter [votre fichier `LOG.md`](./#rendu).
+
+Il n'y a pas de question pour `ANSWERS.md` cette semaine.
