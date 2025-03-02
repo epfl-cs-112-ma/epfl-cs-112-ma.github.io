@@ -57,3 +57,15 @@ Commençant le lundi 24 février
 4. Projet
     1. [Démarrage du projet](./projet/)
     2. [Découverte d'Arcade](./projet/01-decouverte.html)
+
+## Semaine 3
+
+Commençant le lundi 3 mars
+
+1. Tutoriels
+    1. [Méthodes spéciales](./tutoriels/methodes-speciales.html)
+    2. [Propriétés](./tutoriels/proprietes.html)
+2. Exercices
+    1. [Méthodes spéciales et propriétés](./series/03-methodes-speciales-et-proprietes.html)
+3. Projet
+    1. À venir

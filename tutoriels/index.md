@@ -11,6 +11,8 @@ layout: default
 * [Prise en main de Python et VS Code](./prise-en-main.html)
 * [git, branches et collaborations](./git-branches.html)
 * [Classes et méthodes](./classes.html)
+* [Méthodes spéciales](./methodes-speciales.html)
+* [Propriétés](./proprietes.html)
 
 ## Références
 
