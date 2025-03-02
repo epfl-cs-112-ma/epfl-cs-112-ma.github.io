@@ -2,6 +2,10 @@
   width: 1060px;
 }
 
+header, footer {
+  position: static;
+}
+
 section {
   width: 700px;
 }
