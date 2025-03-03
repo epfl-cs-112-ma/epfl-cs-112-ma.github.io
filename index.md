@@ -68,4 +68,4 @@ Commençant le lundi 3 mars
 2. Exercices
     1. [Méthodes spéciales et propriétés](./series/03-methodes-speciales-et-proprietes.html)
 3. Projet
-    1. À venir
+    1. [Maps et monstres](./projet/02-maps-et-monstres.html)
