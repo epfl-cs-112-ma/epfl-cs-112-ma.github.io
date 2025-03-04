@@ -196,6 +196,7 @@ Surtout pour la lecture du fichier :
 Surtout pour les blobs :
 
 * [Documentation de `arcade.Sprite`](https://api.arcade.academy/en/latest/api_docs/api/sprites.html#arcade.Sprite)
+* Vous pourriez avoir envie d'utiliser les attributs `boundary_left` et `boundary_right` pour vos sprites de blobs ; leur valeur est ignorée par Arcade, donc vous en faites ce que vous voulez
 
 ## Compléter le log et les réponses
 
