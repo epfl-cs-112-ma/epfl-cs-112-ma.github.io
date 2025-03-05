@@ -118,10 +118,13 @@ Pour cet aspect de votre projet, vous devez :
 * Lire et décoder un fichier de carte tel que décrit ci-dessus.
 * Utiliser son contenu pour générer dynamiquement la map de votre jeu, au lieu de la créer manuellement.
 * Si le fichier attendu ne peut pas être lu ou n'a pas le bon format, votre application doit émettre un message d'erreur à l'attention de l'utilisatrice ou l'utilisateur :
-    * soit dans la console (avec `print()`), auquel cas le programme doit s'arrêter immédiatement (recommandé à ce stade de votre projet) ;
+    * soit dans la console (avec `print()`), auquel cas le programme doit s'arrêter immédiatement ;
     * soit sous forme d'un écran dédié dans la fenêtre de jeu.
 
-  Dans un cas comme dans l'autre, il n'est pas permis de laisser la "stack trace" (le "traceback") s'afficher à l'écran.
+Pour les cas d'erreur : à ce stade-ci du projet, il est acceptable de laisser "crasher" votre programme avec une exception.
+D'ici la fin du projet, il faudra cependant y remédier.
+Il ne sera pas permis de laisser la "stack trace" (le "traceback") s'afficher à l'écran.
+Le message d'erreur devra être "user-friendly".
 
 ## Lave
 
