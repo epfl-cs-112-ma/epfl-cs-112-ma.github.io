@@ -1,8 +1,8 @@
 ---
-title: Tutoriels et références
+title: Tutoriels
 layout: default
 ---
 
-# Tutoriels et références
+# Tutoriels
 
 {% include section-index-list.html %}
