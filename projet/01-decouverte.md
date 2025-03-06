@@ -27,7 +27,7 @@ Vous pourrez alors partir de l'état de l'un ou de l'autre de vos projets respec
 
 ### Création
 
-Commencez par [créer un nouveau projet](/tutoriels/quick-projet-setup.html) pour votre... projet.
+Commencez par [créer un nouveau projet](/references/quick-projet-setup.html) pour votre... projet.
 
 ### Installation de Arcade
 

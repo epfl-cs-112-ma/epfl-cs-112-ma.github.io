@@ -18,7 +18,7 @@ Avant de commencer cette série, il est prévu que vous ayez suivi les deux tuto
 * [Prise en main de git et GitHub](/tutoriels/git-github.html)
 * [Prise en main de Python et VS Code](/tutoriels/prise-en-main.html)
 
-De plus, si ce n'est pas encore fait, assurez-vous d'avoir au moins *parcouru* la référence [Python vs C++](/tutoriels/python-vs-cpp.html).
+De plus, si ce n'est pas encore fait, assurez-vous d'avoir au moins *parcouru* la référence [Python vs C++](/references/python-vs-cpp.html).
 Celle-ci récapitule comment chacun des concepts vus au premier semestre en C++ se traduit en Python.
 Il sera utile de la garder à portée de main.
 
@@ -268,7 +268,7 @@ Testez votre fonction de dérivation sur les 4 expressions précédentes (au min
 Vous en voulez plus ?
 Pourquoi ne pas reprendre votre [projet du premier semestre](https://moodle.epfl.ch/mod/assign/view.php?id=1300384), et le réimplémenter en Python ?
 
-Il y a quelques questions de conception à revoir, étant données [les différences de modèles de valeurs et références entre Python et C++](/tutoriels/python-vs-cpp.html#pointeurs-et-r%C3%A9f%C3%A9rences).
+Il y a quelques questions de conception à revoir, étant données [les différences de modèles de valeurs et références entre Python et C++](/references/python-vs-cpp.html#pointeurs-et-références).
 
 * Si vous aviez fait une différence entre `MonsterID` et `Monster`, cette distinction est-elle encore utile ?
 * Quelles structures devraient être muables ? Lesquelles peuvent rester immuables ?

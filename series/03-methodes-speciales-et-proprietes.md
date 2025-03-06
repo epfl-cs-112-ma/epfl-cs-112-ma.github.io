@@ -15,7 +15,7 @@ Avant de commencer cette série, il est prévu que vous ayez suivi les deux tuto
 * [Méthodes spéciales](/tutoriels/methodes-speciales.html)
 * [Propriétés](/tutoriels/proprietes.html)
 
-Nous vous recommandons de créer [un nouveau projet Python](/tutoriels/quick-projet-setup.html) pour chaque série d'exercices.
+Nous vous recommandons de créer [un nouveau projet Python](/references/quick-projet-setup.html) pour chaque série d'exercices.
 Cela vous permettra d'isoler plus facilement le contenu des différentes semaines.
 
 Cette série contient 3 exercices :

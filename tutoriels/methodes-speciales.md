@@ -157,7 +157,7 @@ Nous mentionnons cette méthode spéciale plus avancée à titre indicatif.
 C'est en fait celle-ci, et non `__str__`, qui est vraiment utilisée par les chaînes de format `f"..."`.
 Cependant, en son absence, `__str__` fait office.
 
-Si vous voulez personnaliser la façon dont les instances de votre classe sont [représentées avec des spécificateurs de format](./python-vs-cpp.html#formattage-de-chaînes), vous pouvez définir une méthode `__format__`.
+Si vous voulez personnaliser la façon dont les instances de votre classe sont [représentées avec des spécificateurs de format](/references/python-vs-cpp.html#formattage-de-chaînes), vous pouvez définir une méthode `__format__`.
 Reportez-vous à [la documentation officielle de `__format__`](https://docs.python.org/3/reference/datamodel.html#object.__format__) si cela vous intéresse.
 
 Par exemple, on pourrait vouloir afficher des vecteurs avec une *précision* spécifiée.

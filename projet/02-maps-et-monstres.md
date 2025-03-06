@@ -192,7 +192,7 @@ Surtout pour la lecture du fichier :
 
 * [Méthodes de la classe `str`](https://docs.python.org/3/library/stdtypes.html#string-methods).
 * [La fonction `int`](https://docs.python.org/3/library/functions.html#int) permet de convertir une chaîne de caractères représentant un nombre en base 10 en un `int`.
-* [Lecture de fichiers, C++ vs Python](/tutoriels/python-vs-cpp.html#fichiers) (rappel)
+* [Lecture de fichiers, C++ vs Python](/references/python-vs-cpp.html#fichiers) (rappel)
 * [Lecture de fichiers, documentation officielle](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 * [La fonction `textwrap.dedent`](https://docs.python.org/3/library/textwrap.html#textwrap.dedent) permet d'écrire des chaînes littérales sur plusieurs lignes dans le code source, tout en ayant une indentation propre.
 

@@ -39,7 +39,7 @@ Commençant le lundi 17 février
     1. [Prise en main de git et GitHub](./tutoriels/git-github.html)
     2. [Prise en main de Python et VS Code](./tutoriels/prise-en-main.html)
 2. Référence
-    1. [Python vs C++](./tutoriels/python-vs-cpp.html)
+    1. [Python vs C++](./references/python-vs-cpp.html)
 3. Exercices
     1. [S'approprier Python](./series/01-appropriation-de-python.html)
 
@@ -51,7 +51,7 @@ Commençant le lundi 24 février
     1. [git, branches et collaboration](./tutoriels/git-branches.html)
     2. [Classes et méthodes](./tutoriels/classes.html)
 2. Référence
-    1. [Création rapide d'un projet](./tutoriels/quick-projet-setup.html)
+    1. [Création rapide d'un projet](./references/quick-projet-setup.html)
 3. Exercices
     1. [Classes et méthodes](./series/02-classes.html)
 4. Projet

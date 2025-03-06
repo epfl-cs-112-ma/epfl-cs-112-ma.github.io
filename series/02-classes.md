@@ -18,7 +18,7 @@ Avant de commencer cette série, il est prévu que vous ayez suivi le tutoriel c
 Le tutoriel sur les branches git n'est pas nécessaire à cette série d'exercices.
 Il est prévu pour votre projet.
 
-Nous vous recommandons de créer [un nouveau projet Python](/tutoriels/quick-projet-setup.html) pour chaque série d'exercices.
+Nous vous recommandons de créer [un nouveau projet Python](/references/quick-projet-setup.html) pour chaque série d'exercices.
 Cela vous permettra d'isoler plus facilement le contenu des différentes semaines.
 
 Cette série contient 3 exercices :
