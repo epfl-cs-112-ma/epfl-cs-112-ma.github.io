@@ -31,41 +31,25 @@ Par exemple, si vous obtenez 20/50 sur la somme de vos deux examens, votre de no
 
 Vous retrouverez les bouts de code écrits chaque semaine pendant les cours [sur le repo `lectures`](https://github.com/epfl-cs-112-ma/lectures).
 
-## Semaine 1
+{% for week in site.data.weeks %}
+{% assign week_nb = week.week %}
+## Semaine {{ week_nb }}
 
-Commençant le lundi 17 février
+Commençant le lundi {{ week.start }}.
 
-1. Tutoriels
-    1. [Prise en main de git et GitHub](./tutoriels/git-github.html)
-    2. [Prise en main de Python et VS Code](./tutoriels/prise-en-main.html)
-2. Référence
-    1. [Python vs C++](./references/python-vs-cpp.html)
-3. Exercices
-    1. [S'approprier Python](./series/01-appropriation-de-python.html)
-
-## Semaine 2
-
-Commençant le lundi 24 février
-
-1. Tutoriels
-    1. [git, branches et collaboration](./tutoriels/git-branches.html)
-    2. [Classes et méthodes](./tutoriels/classes.html)
-2. Référence
-    1. [Création rapide d'un projet](./references/quick-projet-setup.html)
-3. Exercices
-    1. [Classes et méthodes](./series/02-classes.html)
-4. Projet
-    1. [Démarrage du projet](./projet/)
-    2. [Découverte d'Arcade](./projet/01-decouverte.html)
-
-## Semaine 3
-
-Commençant le lundi 3 mars
-
-1. Tutoriels
-    1. [Méthodes spéciales](./tutoriels/methodes-speciales.html)
-    2. [Propriétés](./tutoriels/proprietes.html)
-2. Exercices
-    1. [Méthodes spéciales et propriétés](./series/03-methodes-speciales-et-proprietes.html)
-3. Projet
-    1. [Maps et monstres](./projet/02-maps-et-monstres.html)
+<ol>
+  {% for section in site.data.structure %}
+    {% assign relevant_items = section.items | where: 'week', week_nb %}
+    {% if relevant_items.size > 0 %}
+      <li>
+        {{ section.title }}
+        <ol>
+          {% for item in relevant_items %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ol>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ol>
+{% endfor %}

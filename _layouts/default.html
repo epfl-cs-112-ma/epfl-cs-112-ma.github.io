@@ -46,34 +46,14 @@
         </ul>
         {% endif %}
 
-        <p><a href="/tutoriels/">Tutoriels</a></p>
+        {% for section in site.data.structure %}
+        <p><a href="{{ section.url }}">{{ section.title }}</a></p>
         <ul>
-          <li><a href="/tutoriels/git-github.html">git et GitHub</a></li>
-          <li><a href="/tutoriels/prise-en-main.html">Python et VS Code</a></li>
-          <li><a href="/tutoriels/git-branches.html">branches git</a></li>
-          <li><a href="/tutoriels/classes.html">Classes et méthodes</a></li>
-          <li><a href="/tutoriels/methodes-speciales.html">Méthodes spécialies</a></li>
-          <li><a href="/tutoriels/proprietes.html">Propriétés</a></li>
+          {% for item in section.items %}
+          <li><a href="{{ item.url }}">{{ item.shorttitle | default: item.title }}</a></li>
+          {% endfor %}
         </ul>
-
-        <p><a href="/references/">Références</a></p>
-        <ul>
-          <li><a href="/references/python-vs-cpp.html">Python vs C++</a></li>
-          <li><a href="/references/quick-projet-setup.html">Création d'un projet</a></li>
-        </ul>
-
-        <p><a href="/series/">Séries</a></p>
-        <ul>
-          <li><a href="/series/01-appropriation-de-python.html">S'approprier Python</a></li>
-          <li><a href="/series/02-classes.html">Classes et méthodes</a></li>
-          <li><a href="/series/03-methodes-speciales-et-proprietes.html">Méthodes spéciales et propriétés</a></li>
-        </ul>
-
-        <p><a href="/projet/">Projet</a></p>
-        <ul>
-          <li><a href="/projet/01-decouverte.html">Découverte d'Arcade</a></li>
-          <li><a href="/projet/02-maps-et-monstres.html">Maps et monstres</a></li>
-        </ul>
+        {% endfor %}
       </header>
       <section>
 

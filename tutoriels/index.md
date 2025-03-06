@@ -5,9 +5,4 @@ layout: default
 
 # Tutoriels et références
 
-* [Prise en main de git et GitHub](./git-github.html)
-* [Prise en main de Python et VS Code](./prise-en-main.html)
-* [git, branches et collaborations](./git-branches.html)
-* [Classes et méthodes](./classes.html)
-* [Méthodes spéciales](./methodes-speciales.html)
-* [Propriétés](./proprietes.html)
+{% include section-index-list.html %}

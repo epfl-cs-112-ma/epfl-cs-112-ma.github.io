@@ -1,0 +1,58 @@
+- title: Tutoriels
+  url: /tutoriels/
+  items:
+    - title: Prise en main de git et GitHub
+      shorttitle: git et GitHub
+      url: /tutoriels/git-github.html
+      week: 1
+    - title: Prise en main de Python et VS Code
+      shorttitle: Python et VS Code
+      url: /tutoriels/prise-en-main.html
+      week: 1
+    - title: git, branches et collaboration
+      shorttitle: Branches git
+      url: /tutoriels/git-branches.html
+      week: 2
+    - title: Classes et méthodes
+      url: /tutoriels/classes.html
+      week: 2
+    - title: Méthodes spéciales
+      url: /tutoriels/methodes-speciales.html
+      week: 3
+    - title: Propriétés
+      url: /tutoriels/proprietes.html
+      week: 3
+
+- title: Références
+  url: /references/
+  items:
+    - title: Python vs C++
+      url: /references/python-vs-cpp.html
+      week: 1
+    - title: Setup rapide d'un projet
+      shorttitle: Création d'un projet
+      url: /references/quick-projet-setup.html
+      week: 2
+
+- title: Séries
+  url: /series/
+  items:
+    - title: "S'approprier Python"
+      url: /series/01-appropriation-de-python.html
+      week: 1
+    - title: Classes et méthodes
+      url: /series/02-classes.html
+      week: 2
+    - title: Méthodes spéciales et propriétés
+      url: /series/03-methodes-speciales-et-proprietes.html
+      week: 3
+
+- title: Projet
+  url: /projet/
+  items:
+    - title: Découverte d'Arcade
+      url: /projet/01-decouverte.html
+      week: 2
+    - title: Maps et monstres
+      url: /projet/02-maps-et-monstres.html
+      week: 3
