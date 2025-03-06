@@ -22,6 +22,9 @@
     - title: Propriétés
       url: /tutoriels/proprietes.html
       week: 3
+    - title: Héritage et polymorphisme
+      url: /tutoriels/heritage-et-polymorphisme.html
+      week: 4
 
 - title: Références
   url: /references/
@@ -46,6 +49,9 @@
     - title: Méthodes spéciales et propriétés
       url: /series/03-methodes-speciales-et-proprietes.html
       week: 3
+    - title: Héritage et polymorphisme
+      url: /series/04-heritage-et-polymorphisme.html
+      week: 4
 
 - title: Projet
   url: /projet/

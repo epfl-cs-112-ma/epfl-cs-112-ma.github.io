@@ -241,12 +241,10 @@ Pour l'instant, nous n'avons pas tous les outils pour comprendre comment c'est p
 Vous allez devoir me croire sur parole que la bonne façon d'implémenter cette méthode est la suivante.
 
 ```python
-from types import NotImplementedType
-
 class Vec2:
     ... # comme avant
 
-    def __eq__(self, other: object) -> bool | NotImplementedType:
+    def __eq__(self, other: object) -> bool:
         match other:
             case Vec2():
                 return self.x == other.x and self.y == other.y
