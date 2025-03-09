@@ -26,6 +26,7 @@ Lors des deux dernières semaines, vous aurez pratiquement quartier libre pour f
 
 * [Semaine 1 – Découverte d'Arcade](./01-decouverte.html) : personnage, murs fixes, pièces à collecter et caméra
 * [Semaine 2 - Maps et monstres](./02-maps-et-monstres.html) : charger la map depuis un fichier, monstres de type "blob"
+* [Semaine 3 - Niveaux et épée](./03-niveaux-et-epee.html) : une épée pour attaquer les monstres, un score, et différents niveaux
 
 ## Administration
 
