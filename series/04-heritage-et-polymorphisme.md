@@ -6,6 +6,8 @@ use_mathjax: true
 
 # Série 4 : Héritage et polymorphisme
 
+[Solutions](https://github.com/epfl-cs-112-ma/solutions-serie-04)
+
 Cette série a pour objectif de pratiquer l'usage de l'héritage, du sous-typage et du polymorphisme.
 
 Avant de commencer cette série, il est prévu que vous ayez suivi le tutoriel de cette semaine :
