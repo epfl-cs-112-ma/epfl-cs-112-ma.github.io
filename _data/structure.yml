@@ -25,6 +25,9 @@
     - title: Héritage et polymorphisme
       url: /tutoriels/heritage-et-polymorphisme.html
       week: 4
+    - title: Structures de données
+      url: /tutoriels/structures-de-donnees.html
+      week: 5
 
 - title: Références
   url: /references/
