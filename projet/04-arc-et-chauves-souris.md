@@ -72,7 +72,7 @@ De même, si l'épée ou une flèche touche une chauve-souris, celle-ci est tué
 Vous aurez besoin d'un nouveau pack d'assets pour la chauve-souris : [le pack extended enemies](/files/kenney-extended-enemies-png.zip).
 Le contenu de ce zip provient du [pack Platformer Art Extended Enemis de `kenney.nl`](https://kenney.nl/assets/platformer-art-extended-enemies), qui est aussi sous license CC0.
 
-L'asset pour la chauve-souris sera donc `"assets/kenney-kenney-extended-enemies-png/bat.png"`.
+L'asset pour la chauve-souris sera donc `"assets/kenney-extended-enemies-png/bat.png"`.
 
 On place une chauve-souri sur la carte avec un nouveau caractère : `v`.
 Sa position de départ définit un "champ d'action" dans laquelle elle est autorisée à voler.
@@ -95,7 +95,7 @@ Voici d'abord quelques règles strictes à respecter :
 Nous ne prescrivons pas de formule précise pour leurs mouvements.
 Voici en revanche quelques "idées" qui peuvent vous lancer :
 
-1. Commencez par la faire se déplacer à ligne droite, à vitesse constante.
+1. Commencez par la faire se déplacer en ligne droite, à vitesse constante.
    Si elle s'apprête à sortir de son champ d'action, changez de direction.
    Soit aléatoirement, soit en "rebondissant" sur la paroi invisible du champ d'action, soit en faisant demi-tour, etc.
 2. Ensuite, toutes les "quelques" frames, donnez-lui l'opportunité de changer de direction *aléatoirement*.
