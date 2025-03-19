@@ -6,6 +6,8 @@ use_mathjax: true
 
 # Série 5 : Structures de données
 
+[Solutions](https://github.com/epfl-cs-112-ma/solutions-serie-05)
+
 Cette série a pour objectif de pratiquer l'usage des différentes structures de données disponibles en Python, ainsi que les list comprehenions.
 
 Avant de commencer cette série, il est prévu que vous ayez suivi le tutoriel de cette semaine :
