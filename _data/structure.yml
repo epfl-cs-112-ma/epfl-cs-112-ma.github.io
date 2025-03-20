@@ -28,6 +28,9 @@
     - title: Structures de données
       url: /tutoriels/structures-de-donnees.html
       week: 5
+    - title: Génériques et lambdas
+      url: /tutoriels/generiques-et-lambdas.html
+      week: 6
 
 - title: Références
   url: /references/
