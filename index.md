@@ -31,6 +31,14 @@ Par exemple, si vous obtenez 20/50 sur la somme de vos deux examens, votre de no
 
 Vous retrouverez les bouts de code écrits chaque semaine pendant les cours [sur le repo `lectures`](https://github.com/epfl-cs-112-ma/lectures).
 
+## Enregistrements vidéos des cours
+
+À partir de la semaine 3, les cours ont été enregistrés.
+Ces enregistrements sont essentiellement destinés à la cohorte 2025-2026, dont les cours risquent d'être perturbés par des travaux.
+Cependant, quand ils sont prêts, nous les mettons aussi à votre disposition.
+
+Vous les trouverez [sur le canal MediaSpace du cours](https://mediaspace.epfl.ch/channel/CS-112%2528j%2529%2BProgrammation%2Borient%25C3%25A9e%2Bobjet/108946).
+
 {% for week in site.data.weeks %}
 {% assign week_nb = week.week %}
 ## Semaine {{ week_nb }}
