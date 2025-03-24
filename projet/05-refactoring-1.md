@@ -14,6 +14,9 @@ Elle est dédiée à :
 * y compris écrire les tests que vous auriez laissés de côté jusqu'ici ;
 * *refactoriser* votre code pour améliorer sa qualité, le simplifier, et mieux le préparer aux évolutions futures.
 
+**Suite aux retours des évaluations du cours, ces instructions sont étendues sur 2 semaines.**
+Il n'y aura pas de nouvelles instructions pour le projet en semaine 7.
+
 {::options toc_levels="2..3" /}
 
 * This will become a table of contents (this text will be scrapped).
