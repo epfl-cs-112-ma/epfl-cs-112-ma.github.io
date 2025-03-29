@@ -31,6 +31,9 @@
     - title: Génériques et lambdas
       url: /tutoriels/generiques-et-lambdas.html
       week: 6
+    - title: Modules et packages
+      url: /tutoriels/modules.html
+      week: 7
 
 - title: Références
   url: /references/
