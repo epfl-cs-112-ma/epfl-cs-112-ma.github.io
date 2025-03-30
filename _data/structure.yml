@@ -34,6 +34,9 @@
     - title: Modules et packages
       url: /tutoriels/modules.html
       week: 7
+    - title: Classes, le retour
+      url: /tutoriels/classes-le-retour.html
+      week: 7
 
 - title: Références
   url: /references/
