@@ -70,6 +70,9 @@
     - title: Génériques et lambdas
       url: /series/06-generiques-et-lambdas.html
       week: 6
+    - title: Classes, le retour
+      url: /series/07-classes-le-retour.html
+      week: 7
 
 - title: Projet
   url: /projet/
