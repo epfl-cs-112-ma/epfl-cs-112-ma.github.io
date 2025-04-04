@@ -60,4 +60,9 @@ Commençant le lundi {{ week.start }}.
     {% endif %}
   {% endfor %}
 </ol>
+
+{% if week.end_of_midterm_material %}
+⚠️ Ici (compris) s'arrête la matière pour le midterm.
+{% endif %}
+
 {% endfor %}

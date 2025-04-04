@@ -12,3 +12,6 @@
   start: 24 mars 2025
 - week: 7
   start: 31 mars 2025
+  end_of_midterm_material: true
+- week: 8
+  start: 7 april 2025

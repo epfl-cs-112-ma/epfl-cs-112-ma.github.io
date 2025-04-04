@@ -12,6 +12,9 @@ Nous ne sommes cependant pas attardé sur le sens réel d'avoir plusieurs fichie
 
 Dans ce court chapitre, nous étudions plus en détail les notions de *modules* et de *packages*.
 
+**Ce chapitre ne fait pas partie de la "matière d'examen".**
+Vous devez savoir importer depuis des bibliothèques, mais on ne vous demandera pas de définir des modules ni des packages en examen.
+
 ## Sommaire
 
 {::options toc_levels="2..3" /}
