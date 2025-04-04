@@ -37,6 +37,9 @@
     - title: Classes, le retour
       url: /tutoriels/classes-le-retour.html
       week: 7
+    - title: Fonctions variadiques
+      url: /tutoriels/varargs.html
+      week: 8
 
 - title: Références
   url: /references/
