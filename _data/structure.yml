@@ -82,6 +82,9 @@
     - title: Classes, le retour
       url: /series/07-classes-le-retour.html
       week: 7
+    - title: Pattern matching et bibliothèques
+      url: /series/08-patmat-et-bibliotheques.html
+      week: 8
 
 - title: Projet
   url: /projet/
