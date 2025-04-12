@@ -85,6 +85,9 @@
     - title: Pattern matching et bibliothèques
       url: /series/08-patmat-et-bibliotheques.html
       week: 8
+    - title: Midterm blanc
+      url: /series/09-midterm-blanc.html
+      week: 9
 
 - title: Projet
   url: /projet/
