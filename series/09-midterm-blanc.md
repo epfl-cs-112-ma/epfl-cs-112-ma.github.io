@@ -43,7 +43,7 @@ Plus exactement, voici toutes les consignes officielles qui s'appliqueront au mi
   Vous pouvez ajouter des méthodes, ajouter des classes, généraliser des fonctions, "déplacer" des choses, etc.
 * Il n'est pas requis d'écrire d'`import`, ni de documentation, ni de `__str__`/`__repr__`, ni de tests.
 * La *duplication* de code (y compris du "copier/coller") sera pénalisée (d'où le refactoring).
-* L'usage de `cast` ou `Any` sera pénalisée (si ça ne vous dit rien, tant mieux).
+* L'usage de `cast`, `Any` ou `# type: ignore` sera pénalisé (si ça ne vous dit rien, tant mieux).
 
 ## Sujet
 
