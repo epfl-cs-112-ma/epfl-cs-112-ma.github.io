@@ -46,6 +46,9 @@
     - title: Fonctions variadiques
       url: /tutoriels/varargs.html
       week: 8
+    - title: Performances
+      url: /tutoriels/performances.html
+      week: 10
 
 - title: Références
   url: /references/
@@ -88,6 +91,9 @@
     - title: Midterm blanc
       url: /series/09-midterm-blanc.html
       week: 9
+    - title: NumPy
+      url: /series/10-numpy.html
+      week: 10
 
 - title: Projet
   url: /projet/
