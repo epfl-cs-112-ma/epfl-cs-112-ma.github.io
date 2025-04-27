@@ -34,6 +34,11 @@ a > code {
   color: #267CB9;
 }
 
+a:hover, a:focus {
+  color: #003699;
+  font-weight: normal;
+}
+
 .floating-illustration-image {
   float: right;
   width: 40%;
