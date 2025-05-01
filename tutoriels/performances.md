@@ -358,7 +358,7 @@ Les fonctions avec un grand `tottime` sont des bonnes candidates à optimiser.
 ### Flame graphs
 
 La vue tabulaire de `cProfile` est utile, mais elle n'est pas la meilleure.
-En 2011, Brendan Gregg a inventé un type de graphique particulièrement adapté à la visualisation des résultats d'un profiler : le [flame graph](Brendan Gregg), ou "graphe en flammes".
+En 2011, Brendan Gregg a inventé un type de graphique particulièrement adapté à la visualisation des résultats d'un profiler : le [flame graph](https://www.brendangregg.com/flamegraphs.html), ou "graphe en flammes".
 
 Au lieu d'imprimer un tableau à l'écran, on peut demander à `cProfile` d'écrire ses mesures dans un fichier `.prof`.
 On peut ensuite utiliser une bibliothèque externe pour créer un flame graph à partir de celles-ci.
