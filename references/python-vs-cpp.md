@@ -1283,7 +1283,7 @@ f.close();
 <td>
 {% highlight python %}
 # le "w" indique "write"
-with open("file.txt", "w", encoding="utf-8", newline='') as f:
+with open("file.txt", "w", encoding="utf-8", newline='\n') as f:
     f.write("hello\n") # notez le \n
 # close() automatique à la sortie du `with`
 {% endhighlight %}
@@ -1293,7 +1293,7 @@ with open("file.txt", "w", encoding="utf-8", newline='') as f:
 <p>L'argument <code>encoding="utf-8"</code> s'assure que l'on manipule toujours les fichiers avec l'encodage UTF-8.
 Sans cet argument, l'encodage peut varier d'un système à l'autre, ce qui est très problématique.</p>
 
-<p>L'argument <code>newline=''</code> empêche Python de transformer les nouvelles lignes <code>\n</code> lorsqu'il écrit dans le fichier.
+<p>L'argument <code>newline='\n'</code> empêche Python de transformer les nouvelles lignes <code>\n</code> lorsqu'il écrit dans le fichier.
 Encore une fois, sans cet argument, les résultats peuvent varier d'un système à l'autre.</p>
 </td></tr>
 <tr><th colspan="2">Lecture depuis un fichier</th></tr>
@@ -1309,7 +1309,7 @@ f.close();
 <td>
 {% highlight python %}
 # le "r" indique "read"
-with open("file.txt", "r", encoding="utf-8", newline='') as f:
+with open("file.txt", "r", encoding="utf-8", newline='\n') as f:
     line = f.readline()
 # close() automatique à la sortie du `with`
 {% endhighlight %}
