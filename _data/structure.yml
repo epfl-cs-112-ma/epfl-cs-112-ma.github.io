@@ -49,6 +49,12 @@
     - title: Performances
       url: /tutoriels/performances.html
       week: 10
+    - title: Itérateurs et générateurs
+      url: /tutoriels/generateurs.html
+      week: 11
+    - title: Expressions régulières
+      url: /tutoriels/expressions-regulieres.html
+      week: 11
 
 - title: Références
   url: /references/
