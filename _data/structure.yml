@@ -55,6 +55,9 @@
     - title: Expressions régulières
       url: /tutoriels/expressions-regulieres.html
       week: 11
+    - title: Techniques avancées
+      url: /tutoriels/techniques-avancees.html
+      week: 12
 
 - title: Références
   url: /references/
