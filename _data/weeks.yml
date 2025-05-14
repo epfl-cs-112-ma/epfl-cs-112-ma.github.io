@@ -21,5 +21,6 @@
   start: 28 avril 2025
 - week: 11
   start: 5 mai 2025
+  end_of_final_material: true
 - week: 12
   start: 12 mai 2025

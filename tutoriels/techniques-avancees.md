@@ -10,6 +10,9 @@ Nous voilà déjà au dernier chapitre de ce cours.
 Je vous propose ici une collection disparate de quelques techniques avancées, qui pourront vous servir lors de vos développements.
 Ne cherchez pas le lien entre elles ; il n'y en a pas.
 
+**Ce chapitre ne fait pas partie de la "matière d'examen".**
+J'estime qu'il est nécessaire de vous enseigner ces sujets, mais je ne vous évaluerai pas dessus.
+
 ## Sommaire
 
 {::options toc_levels="2..3" /}

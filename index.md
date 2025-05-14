@@ -65,4 +65,8 @@ Commençant le lundi {{ week.start }}.
 ⚠️ Ici (compris) s'arrête la matière pour le midterm.
 {% endif %}
 
+{% if week.end_of_final_material %}
+⚠️ Ici (compris) s'arrête la matière pour l'examen final.
+{% endif %}
+
 {% endfor %}
