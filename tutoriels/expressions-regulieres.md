@@ -76,7 +76,7 @@ On peut utiliser l'expression régulière `[0-9]+/[0-9]+/[0-9]+` pour tester, ma
 Pour cela, on ajoute des parenthèses pour former des *groupes* :
 
 ```python
-date_re = re.Pattern('([0-9]+)/([0-9]+)/([0-9]+)')
+date_re = re.compile('([0-9]+)/([0-9]+)/([0-9]+)')
 
 result = date_re.fullmatch('1/5/2025')
 if result:
